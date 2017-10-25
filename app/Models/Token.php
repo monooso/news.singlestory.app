@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Token extends Model
 {
+    use SaneRefresh;
+
     protected $dates = ['expires_at'];
 
     protected $fillable = ['user_id'];
@@ -33,32 +35,6 @@ class Token extends Model
     public static function createForUser(User $user)
     {
         return static::create(['user_id' => $user->id]);
-    }
-
-    /**
-     * Override the Model::refresh method to fix global scopes issue.
-     * @see https://github.com/laravel/framework/issues/21809
-     *
-     * @return $this
-     */
-    public function refresh()
-    {
-        if (!$this->exists) {
-            return $this;
-        }
-
-        $this->setRawAttributes(static::newQueryWithoutScopes()
-            ->findOrFail($this->getKey())
-            ->attributes
-        );
-
-        $this->load(collect($this->relations)
-            ->except('pivot')
-            ->keys()
-            ->toArray()
-        );
-
-        return $this;
     }
 
     /**
