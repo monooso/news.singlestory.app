@@ -21,11 +21,36 @@ class RedeemTokenTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testRedeemMissingToken()
+    public function testRedeemValidTokenLogsUserIn()
+    {
+        $token = factory(Token::class)->create();
+
+        $this->get(route('login.validate-token', $token->password));
+
+        $this->assertAuthenticatedAs($token->user);
+    }
+
+    public function testRedeemValidTokenDeletesTheToken()
+    {
+        $token = factory(Token::class)->create();
+
+        $this->get(route('login.validate-token', $token->password));
+
+        $this->assertDatabaseMissing('tokens', ['id' => $token->id]);
+    }
+
+    public function testRedeemInvalidTokenRedirectsToInvalidTokenPage()
     {
         $response = $this->get(route('login.validate-token', 'abc123'));
 
         $response->assertRedirect(route('login.invalid-token'));
+    }
+
+    public function testRedeemInvalidTokenDoesNotLogUserIn()
+    {
+        $this->get(route('login.validate-token', 'abc123'));
+
+        $this->assertGuest();
     }
 
     protected function setUp()

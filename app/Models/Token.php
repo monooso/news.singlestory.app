@@ -48,6 +48,14 @@ class Token extends Model
     }
 
     /**
+     * "Redeems" the current token.
+     */
+    public function redeem()
+    {
+        $this->delete();
+    }
+
+    /**
      * Every token belongs to a user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

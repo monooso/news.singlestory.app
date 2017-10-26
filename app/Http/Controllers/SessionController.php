@@ -13,6 +13,10 @@ class SessionController extends Controller
 
     public function store(Token $token)
     {
+        auth()->login($token->user);
+
+        $token->redeem();
+
         return redirect()->route('account');
     }
 }
