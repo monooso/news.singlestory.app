@@ -6,6 +6,11 @@ use App\Models\Token;
 
 class SessionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function show()
     {
         return view('login.next');

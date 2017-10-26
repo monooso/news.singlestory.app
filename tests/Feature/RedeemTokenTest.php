@@ -12,6 +12,19 @@ class RedeemTokenTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function testAnAuthenticatedUserCannotRedeemAToken()
+    {
+        $user = factory(User::class)->create();
+        $token = factory(Token::class)->create();
+
+        $this->be($user);
+
+        $response = $this->get(route('login.validate-token', $token->password));
+
+        $response->assertRedirect(route('account'));
+        $this->assertAuthenticatedAs($user);
+    }
+
     public function testRedeemValidToken()
     {
         $token = factory(Token::class)->create();
