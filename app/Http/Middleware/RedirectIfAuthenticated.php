@@ -3,24 +3,23 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
 {
     /**
-     * Handle an incoming request.
+     * If a logged-in user attempts to access a "guest" page, redirect him to
+     * his dashboard.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure                 $next
+     * @param  string|null              $guard
+     *
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
-        }
-
-        return $next($request);
+        return auth()->guard($guard)->check()
+            ? redirect()->route('account')
+            : $next($request);
     }
 }

@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Model
+class User extends Model implements AuthenticatableContract
 {
+    use Authenticatable;
     use Notifiable;
 
     protected $fillable = ['email'];
@@ -31,5 +34,15 @@ class User extends Model
     public function getPasswordAttribute()
     {
         return (string)$this->token;
+    }
+
+    /**
+     * We don't support "remember me" functionality.
+     *
+     * @return string
+     */
+    public function getRememberTokenName()
+    {
+        return '';
     }
 }

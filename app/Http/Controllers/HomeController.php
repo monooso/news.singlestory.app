@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class InvalidTokenController extends Controller
+class HomeController extends Controller
 {
     public function show()
     {
+        return view('home');
     }
 }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <p>The user's account page</p>
+    <p>All about Nofomo</p>
 @endsection

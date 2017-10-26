@@ -18,6 +18,36 @@ class RegistrationTest extends TestCase
         Mail::fake();
     }
 
+    public function testAnAuthenticatedUserCannotAccessTheRegistrationForm()
+    {
+        $user = factory(User::class)->create();
+        $this->be($user);
+
+        $response = $this->get(route('join'));
+
+        $response->assertRedirect(route('account'));
+    }
+
+    public function testAnAuthenticatedUserCannotSubmitTheRegistrationForm()
+    {
+        $user = factory(User::class)->create();
+        $this->be($user);
+
+        $response = $this->post(route('join'), ['email' => 'john@doe.com']);
+
+        $response->assertRedirect(route('account'));
+    }
+
+    public function testAnAuthenticatedUserCannotViewTheNextStepPage()
+    {
+        $user = factory(User::class)->create();
+        $this->be($user);
+
+        $response = $this->get(route('join.next'));
+
+        $response->assertRedirect(route('account'));
+    }
+
     public function testRegistrationForm()
     {
         $response = $this->get(route('join'));

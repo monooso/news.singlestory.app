@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Token extends Model
 {
+    use SaneRefresh;
+
     protected $dates = ['expires_at'];
 
     protected $fillable = ['user_id'];
@@ -36,32 +38,6 @@ class Token extends Model
     }
 
     /**
-     * Override the Model::refresh method to fix global scopes issue.
-     * @see https://github.com/laravel/framework/issues/21809
-     *
-     * @return $this
-     */
-    public function refresh()
-    {
-        if (!$this->exists) {
-            return $this;
-        }
-
-        $this->setRawAttributes(static::newQueryWithoutScopes()
-            ->findOrFail($this->getKey())
-            ->attributes
-        );
-
-        $this->load(collect($this->relations)
-            ->except('pivot')
-            ->keys()
-            ->toArray()
-        );
-
-        return $this;
-    }
-
-    /**
      * Enable route model binding, using the password field as the key.
      *
      * @return string
@@ -69,6 +45,14 @@ class Token extends Model
     public function getRouteKeyName()
     {
         return 'password';
+    }
+
+    /**
+     * "Redeems" the current token.
+     */
+    public function redeem()
+    {
+        $this->delete();
     }
 
     /**
