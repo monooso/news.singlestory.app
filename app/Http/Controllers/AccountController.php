@@ -23,9 +23,9 @@ class AccountController extends Controller
     protected function getEmailScheduleOptions(): array
     {
         return [
-            EmailSchedule::DAILY  => trans('schedule.daily'),
-            EmailSchedule::WEEKLY => trans('schedule.weekly'),
-            EmailSchedule::NEVER  => trans('schedule.never'),
+            EmailSchedule::DAILY  => trans('account.schedule.daily'),
+            EmailSchedule::WEEKLY => trans('account.schedule.weekly'),
+            EmailSchedule::NEVER  => trans('account.schedule.never'),
         ];
     }
 
@@ -37,6 +37,8 @@ class AccountController extends Controller
 
         auth()->user()->update(['schedule' => $input['schedule']]);
 
-        return redirect()->route('account');
+        return redirect()
+            ->route('account')
+            ->with('status', trans('account.preferences.updated'));
     }
 }

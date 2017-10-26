@@ -19,6 +19,19 @@ class EmailPreferencesTest extends TestCase
         $response->assertRedirect(route('login'));
     }
 
+    public function testAConfirmationMessageIsDisplayedWhenTheEmailPreferencesAreSaved()
+    {
+        $user = factory(User::class)->create();
+        $this->be($user);
+
+        $response = $this->post(route('account'), [
+            'schedule' => EmailSchedule::DAILY,
+        ]);
+
+        $response->assertRedirect(route('account'));
+        $response->assertSessionHas('status', trans('account.preferences.updated'));
+    }
+
     public function testAnAuthenticatedUserCanChooseToReceiveDailyEmails()
     {
         $user = factory(User::class)->create();
@@ -118,9 +131,9 @@ class EmailPreferencesTest extends TestCase
         $response->assertViewIs('account.show');
 
         $response->assertViewHas('schedule_options', [
-            EmailSchedule::DAILY  => trans('schedule.daily'),
-            EmailSchedule::WEEKLY => trans('schedule.weekly'),
-            EmailSchedule::NEVER  => trans('schedule.never'),
+            EmailSchedule::DAILY  => trans('account.schedule.daily'),
+            EmailSchedule::WEEKLY => trans('account.schedule.weekly'),
+            EmailSchedule::NEVER  => trans('account.schedule.never'),
         ]);
     }
 

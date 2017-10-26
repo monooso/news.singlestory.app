@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session()->has('status'))
+        <div>
+            <p>{{ session('status') }}</p>
+        </div>
+    @endif
+
     <form action="{{ route('account') }}" method="post">
         {{ csrf_field() }}
 
