@@ -21,7 +21,7 @@ class RedeemTokenTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function xtestRedeemMissingToken()
+    public function testRedeemMissingToken()
     {
         $response = $this->get(route('login.validate-token', 'abc123'));
 

@@ -6,5 +6,6 @@ class InvalidTokenController extends Controller
 {
     public function show()
     {
+        return view('login.invalid-token');
     }
 }
