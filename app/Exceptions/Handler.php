@@ -45,7 +45,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($exception instanceof InvalidTokenException) {
-            return redirect()->route('login.invalid-token');
+            return abort(404, $exception->getMessage());
         }
 
         return parent::render($request, $exception);

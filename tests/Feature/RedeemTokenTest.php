@@ -43,7 +43,8 @@ class RedeemTokenTest extends TestCase
     {
         $response = $this->get(route('login.validate-token', 'abc123'));
 
-        $response->assertRedirect(route('login.invalid-token'));
+        $response->assertStatus(404);
+        $response->assertSeeText('abc123 is not a valid token');
     }
 
     public function testRedeemInvalidTokenDoesNotLogUserIn()

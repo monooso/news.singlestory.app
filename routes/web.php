@@ -19,9 +19,6 @@ Route::get('/login/next', 'SessionController@show')->name('login.next');
 Route::get('/login/token/{token}','SessionController@store')
     ->name('login.validate-token');
 
-Route::get('/login/nope', 'InvalidTokenController@show')
-    ->name('login.invalid-token');
-
 // -----------------------------------------------------------------------------
 // Manage account
 // -----------------------------------------------------------------------------
