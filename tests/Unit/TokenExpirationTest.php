@@ -21,7 +21,7 @@ class TokenExpirationTest extends TestCase
         $this->assertTimeWithin(
             Carbon::now()->addMinutes(15),
             $token->expires_at,
-            1
+            2
         );
     }
 
@@ -35,7 +35,7 @@ class TokenExpirationTest extends TestCase
         $this->assertTimeWithin(
             Carbon::now()->addMinutes(15),
             $token->expires_at,
-            1
+            2
         );
     }
 
@@ -57,6 +57,6 @@ class TokenExpirationTest extends TestCase
         $token->save();
         $token->refresh();
 
-        $this->assertTimeWithin($expiresAt, $token->expires_at, 1);
+        $this->assertTimeWithin($expiresAt, $token->expires_at, 2);
     }
 }
