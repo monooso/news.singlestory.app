@@ -17,15 +17,20 @@ Route::get('join/next', 'ConfirmRegistrationController@show')
 // -----------------------------------------------------------------------------
 // Login
 // -----------------------------------------------------------------------------
-Route::get('/login', 'LoginController@show')->name('login');
-Route::post('/login', 'LoginController@store');
-Route::get('/login/next', 'SessionController@show')->name('login.next');
+Route::get('login', 'LoginController@show')->name('login');
+Route::post('login', 'LoginController@store');
+Route::get('login/next', 'SessionController@show')->name('login.next');
 
-Route::get('/login/token/{token}','SessionController@store')
+Route::get('login/token/{token}','SessionController@store')
     ->name('login.validate-token');
+
+// -----------------------------------------------------------------------------
+// Logout
+// -----------------------------------------------------------------------------
+Route::get('logout', 'SessionController@destroy')->name('logout');
 
 // -----------------------------------------------------------------------------
 // Manage account
 // -----------------------------------------------------------------------------
-Route::get('/account', 'AccountController@show')->name('account');
-Route::post('/account', 'AccountController@store');
+Route::get('account', 'AccountController@show')->name('account');
+Route::post('account', 'AccountController@store');

@@ -8,7 +8,8 @@ class SessionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest')->only(['show', 'store']);
+        $this->middleware('auth')->only('destroy');
     }
 
     public function show()
@@ -23,5 +24,12 @@ class SessionController extends Controller
         $token->redeem();
 
         return redirect()->route('account');
+    }
+
+    public function destroy()
+    {
+        auth()->logout();
+
+        return redirect()->route('home');
     }
 }
