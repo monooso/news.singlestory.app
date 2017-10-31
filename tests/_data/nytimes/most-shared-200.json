@@ -1,0 +1,1061 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2017 The New York Times Company.  All Rights Reserved.",
+  "num_results": 20,
+  "results": [
+    {
+      "url": "https://www.nytimes.com/2017/10/21/world/europe/spain-catalonia-mariano-rajoy.html",
+      "column": "",
+      "section": "World",
+      "byline": "By RAPHAEL MINDER",
+      "title": "Spain Will Remove Catalonia Leader, Escalating Secession Crisis",
+      "abstract": "Mariano Rajoy, in an unexpectedly forceful move, said Madrid would take control of the independence-minded region, pushing out its separatist administration.",
+      "published_date": "2017-10-21",
+      "source": "The New York Times",
+      "asset_id": 100000005509151,
+      "total_shares": 1,
+      "des_facet": [
+        "SECESSION AND INDEPENDENCE MOVEMENTS"
+      ],
+      "org_facet": "",
+      "per_facet": [
+        "RAJOY, MARIANO",
+        "PUIGDEMONT, CARLES (1962- )"
+      ],
+      "geo_facet": [
+        "SPAIN",
+        "CATALONIA (SPAIN)"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Prime Minister Mariano Rajoy of Spain announced that fresh regional elections would take place in Catalonia within six months.",
+          "copyright": "Gabriel Bouys/Agence France-Presse &mdash; Getty Images",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22spain-2/22spain-2-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22spain-2/22spain-2-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22spain-2/22spain-2-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/25/world/asia/thailand-king-cremation.html",
+      "column": null,
+      "section": "World",
+      "byline": "By HANNAH BEECH",
+      "title": "Thailand Prepares for a King’s $90 Million Cremation Ceremony",
+      "abstract": "In Bangkok, residents have folded more than 10 million flowers made of sandalwood to help guide the king’s soul to the afterworld.",
+      "published_date": "2017-10-25",
+      "source": "The New York Times",
+      "asset_id": 100000005515909,
+      "total_shares": 2,
+      "des_facet": "",
+      "org_facet": [
+        "ROYAL FAMILIES"
+      ],
+      "per_facet": [
+        "BHUMIBOL ADULYADEJ"
+      ],
+      "geo_facet": [
+        "THAILAND"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Mourners who spent the night waiting to attend the cremation of King Bhumibol Adulyadej in Bangkok.",
+          "copyright": "Adam Dean for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/26/world/26thaiking-1/26thaiking-1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/26/world/26thaiking-1/26thaiking-1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/26/world/26thaiking-1/26thaiking-1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/18/world/europe/italy-fake-news.html",
+      "column": "",
+      "section": "World",
+      "byline": "By JASON HOROWITZ",
+      "title": "In Italian Schools, Reading, Writing and Recognizing Fake News",
+      "abstract": "A new program, aided by companies like Facebook, will aim to teach students how to recognize and stop the sharing of fake news and conspiracy theories.",
+      "published_date": "2017-10-18",
+      "source": "The New York Times",
+      "asset_id": 100000005498338,
+      "total_shares": 3,
+      "des_facet": [
+        "NEWS AND NEWS MEDIA",
+        "POLITICS AND GOVERNMENT"
+      ],
+      "org_facet": [
+        "FIVE STAR MOVEMENT (ITALY)",
+        "GOOGLE INC",
+        "FACEBOOK INC"
+      ],
+      "per_facet": [
+        "BOLDRINI, LAURA"
+      ],
+      "geo_facet": [
+        "ITALY"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Laura Boldrini, president of Italy&rsquo;s Chamber of Deputies, spearheaded a project to educate high-school students on how to recognize fake news and conspiracy theories online.",
+          "copyright": "Andreas Solaro/Agence France-Presse &mdash; Getty Images",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/19fakenews1/17fakenews1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/19fakenews1/17fakenews1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/19fakenews1/17fakenews1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/22/world/asia/cia-expanding-taliban-fight-afghanistan.html",
+      "column": "",
+      "section": "World",
+      "byline": "By THOMAS GIBBONS-NEFF, ERIC SCHMITT and ADAM GOLDMAN",
+      "title": "A Newly Assertive C.I.A. Expands Its Taliban Hunt in Afghanistan",
+      "abstract": "The assignment heralds a shift for the agency, which once viewed such a mission as risky and a drain on resources.",
+      "published_date": "2017-10-22",
+      "source": "The New York Times",
+      "asset_id": 100000005505222,
+      "total_shares": 4,
+      "des_facet": [
+        "AFGHANISTAN WAR (2001- )",
+        "TERRORISM",
+        "UNITED STATES DEFENSE AND MILITARY FORCES",
+        "UNITED STATES POLITICS AND GOVERNMENT"
+      ],
+      "org_facet": [
+        "CENTRAL INTELLIGENCE AGENCY",
+        "TALIBAN"
+      ],
+      "per_facet": [
+        "POMPEO, MIKE",
+        "TRUMP, DONALD J"
+      ],
+      "geo_facet": [
+        "AFGHANISTAN"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Afghan Army soldiers in 2013. The C.I.A. is expanding its covert operations in Afghanistan, sending small teams of highly experienced officers and contractors to fight alongside Afghan forces.",
+          "copyright": "Daniel Berehulak for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/23DC-intel/23DC-intel-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/23DC-intel/23DC-intel-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/23DC-intel/23DC-intel-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/23/world/americas/drug-enforcement-agency-dea-honduras.html",
+      "column": "",
+      "section": "World",
+      "byline": "By MATTATHIAS SCHWARTZ",
+      "title": "D.E.A. Says Hondurans Opened Fire During a Drug Raid. A Video Suggests Otherwise.",
+      "abstract": "Now made public, the government’s surveillance video strongly suggests the agency’s account of a raid in Honduras, where four civilians died, was not accurate.",
+      "published_date": "2017-10-23",
+      "source": "The New York Times",
+      "asset_id": 100000005457453,
+      "total_shares": 5,
+      "des_facet": [
+        "DRUG ABUSE AND TRAFFIC",
+        "POLICE BRUTALITY, MISCONDUCT AND SHOOTINGS"
+      ],
+      "org_facet": [
+        "DRUG ENFORCEMENT ADMINISTRATION",
+        "STATE DEPARTMENT"
+      ],
+      "per_facet": "",
+      "geo_facet": [
+        "HONDURAS"
+      ],
+      "media": ""
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/19/world/middleeast/islamic-state-reconstruction.html",
+      "column": null,
+      "section": "World",
+      "byline": "By MEGAN SPECIA",
+      "title": "This Is What Victory Over ISIS Looks Like",
+      "abstract": "Cities in Syria and Iraq have been wrested from the Islamic State at a terrible cost. They are ghosts of their former glory.",
+      "published_date": "2017-10-19",
+      "source": "The New York Times",
+      "asset_id": 100000005502695,
+      "total_shares": 6,
+      "des_facet": [
+        "VIS-MULTIMEDIA"
+      ],
+      "org_facet": [
+        "RESTORATION AND RENOVATION",
+        "ISLAMIC STATE IN IRAQ AND SYRIA (ISIS)"
+      ],
+      "per_facet": "",
+      "geo_facet": [
+        "RAMADI (IRAQ)",
+        "MOSUL (IRAQ)",
+        "FALLUJA (IRAQ)",
+        "KOBANI (SYRIA)"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Kobani, Syria, after an invasion by the Islamic State was repelled in 2015.",
+          "copyright": "Tyler Hicks/The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/20isis-kobani/20isis-kobani-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/20isis-kobani/20isis-kobani-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/20isis-kobani/20isis-kobani-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/22/world/europe/italy-churches-theft.html",
+      "column": "Monteroduni Journal",
+      "section": "World",
+      "byline": "By ELISABETTA POVOLEDO",
+      "title": "Hundreds of Italy’s Churches Were Robbed of Artworks. This One Was Recovered.",
+      "abstract": "The country’s 60,000 churches are a treasure trove of masterpieces and artifacts. Protecting them from theft while keeping them open to the public is no easy task.",
+      "published_date": "2017-10-22",
+      "source": "The New York Times",
+      "asset_id": 100000005492812,
+      "total_shares": 7,
+      "des_facet": [
+        "ARTS AND ANTIQUITIES LOOTING",
+        "CHURCHES (BUILDINGS)"
+      ],
+      "org_facet": [
+        "ROMAN CATHOLIC CHURCH"
+      ],
+      "per_facet": "",
+      "geo_facet": [
+        "MONTERODUNI (ITALY)"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "A stolen statue was returned with great fanfare to its church in Monteroduni, Italy, last month.",
+          "copyright": "Gianni Cipriano for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/xxmonteroduni1/xxmonteroduni1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/xxmonteroduni1/xxmonteroduni1-mediumThreeByTwo210-v2.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/xxmonteroduni1/xxmonteroduni1-mediumThreeByTwo440-v2.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/21/world/africa/robert-mugabe-goodwill-ambassador-who.html",
+      "column": "",
+      "section": "World",
+      "byline": "By YONETTE JOSEPH",
+      "title": "After Making Mugabe a ‘Good-Will Ambassador,’ W.H.O. Chief Is ‘Rethinking’ It",
+      "abstract": "The decision outraged medical professionals, rights groups and others who took to social media to call it an “insult” and “a sick joke.”",
+      "published_date": "2017-10-21",
+      "source": "The New York Times",
+      "asset_id": 100000005509105,
+      "total_shares": 8,
+      "des_facet": [
+        "HUMAN RIGHTS AND HUMAN RIGHTS VIOLATIONS"
+      ],
+      "org_facet": [
+        "WORLD HEALTH ORGANIZATION",
+        "UNITED NATIONS"
+      ],
+      "per_facet": [
+        "MUGABE, ROBERT",
+        "TEDROS ADHANOM GHEBREYESUS"
+      ],
+      "geo_facet": [
+        "ZIMBABWE"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "President Robert Mugabe of Zimbabwe in Harare, the country’s capital, in 2016. The World Health Organization has named him a “good-will ambassador.”",
+          "copyright": "Tsvangirayi Mukwazhi/Associated Press",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22mugabe/22mugabe-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22mugabe/22mugabe-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22mugabe/22mugabe-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/17/world/asia/xi-jinping-communist-party-china.html",
+      "column": "",
+      "section": "World",
+      "byline": "By CHRIS BUCKLEY",
+      "title": "Xi Jinping Opens China’s Party Congress, His Hold Tighter Than Ever",
+      "abstract": "Warning of deep and complicated changes but describing the outlook as “extremely bright,” the president is set to make himself the indispensable man.",
+      "published_date": "2017-10-17",
+      "source": "The New York Times",
+      "asset_id": 100000005496177,
+      "total_shares": 9,
+      "des_facet": "",
+      "org_facet": [
+        "COMMUNIST PARTY OF CHINA"
+      ],
+      "per_facet": [
+        "XI JINPING",
+        "WANG QISHAN"
+      ],
+      "geo_facet": [
+        "CHINA"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "President Xi Jinping arriving for his speech at the opening of the 19th National Congress of the Chinese Communist Party, held at the Great Hall of the People in Beijing on Wednesday.",
+          "copyright": "Ng Han Guan/Associated Press",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/18china-party-1sub/18china-party-1sub-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/18china-party-1sub/18china-party-1sub-mediumThreeByTwo210-v2.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/18china-party-1sub/18china-party-1sub-mediumThreeByTwo440-v2.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/19/world/asia/myanmar-democracy-rohingya.html",
+      "column": "The Interpreter",
+      "section": "World",
+      "byline": "By MAX FISHER",
+      "title": "Myanmar, Once a Hope for Democracy, Is Now a Study in How It Fails",
+      "abstract": "Nationalism, an unchecked ethnic majority and support for authoritarian values have put Myanmar well down the road to becoming an “illiberal democracy.”",
+      "published_date": "2017-10-19",
+      "source": "The New York Times",
+      "asset_id": 100000005491971,
+      "total_shares": 10,
+      "des_facet": [
+        "POLITICS AND GOVERNMENT",
+        "BUDDHISM"
+      ],
+      "org_facet": "",
+      "per_facet": [
+        "AUNG SAN SUU KYI"
+      ],
+      "geo_facet": [
+        "MYANMAR"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Supporters of Daw Aung San Suu Kyi on Oct. 10 in Yangon, Myanmar, at what was billed as an Interreligious Gathering of Prayers for Peace.",
+          "copyright": "Adam Dean for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/20/world/20int-myanmar-1/17int-myanmar-1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/20/world/20int-myanmar-1/17int-myanmar-1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/20/world/20int-myanmar-1/17int-myanmar-1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/22/world/europe/catalonia-spain-carles-puigdemont-mariano-rajoy.html",
+      "column": "News Analysis",
+      "section": "World",
+      "byline": "By RAPHAEL MINDER",
+      "title": "In Catalonia Crisis, Shared Blame for ‘a Difficult and Undesirable Situation’",
+      "abstract": "Catalan separatists have flouted Spain’s Constitution, but Prime Minister Mariano Rajoy has also allowed the conflict to spin dangerously out of control.",
+      "published_date": "2017-10-22",
+      "source": "The New York Times",
+      "asset_id": 100000005510050,
+      "total_shares": 11,
+      "des_facet": [
+        "SECESSION AND INDEPENDENCE MOVEMENTS",
+        "POLITICS AND GOVERNMENT"
+      ],
+      "org_facet": "",
+      "per_facet": [
+        "RAJOY, MARIANO",
+        "PUIGDEMONT, CARLES (1962- )"
+      ],
+      "geo_facet": [
+        "CATALONIA (SPAIN)",
+        "SPAIN"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Carles Puigdemont, center, in blue blazer and glasses, the leader of Catalonia, at a demonstration in Barcelona on Saturday.",
+          "copyright": "Ivan Alvarado/Reuters",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/23SPAIN-01/23SPAIN-01-thumbStandard-v2.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/23SPAIN-01/23SPAIN-01-mediumThreeByTwo210-v2.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/23SPAIN-01/23SPAIN-01-mediumThreeByTwo440-v2.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/24/world/asia/china-xi-jinping-constitution.html",
+      "column": null,
+      "section": "World",
+      "byline": "By CHRIS BUCKLEY",
+      "title": "China Enshrines ‘Xi Jinping Thought.’ What Does That Mean?",
+      "abstract": "The Communist Party has added the president’s name and ideas to its constitution. Here is what that means.",
+      "published_date": "2017-10-24",
+      "source": "The New York Times",
+      "asset_id": 100000005512529,
+      "total_shares": 12,
+      "des_facet": [
+        "POLITICS AND GOVERNMENT",
+        "DEFENSE AND MILITARY FORCES",
+        "CONSTITUTIONS",
+        "ECONOMIC CONDITIONS AND TRENDS"
+      ],
+      "org_facet": [
+        "CORRUPTION (INSTITUTIONAL)",
+        "CENTRAL COMMISSION FOR DISCIPLINE INSPECTION (COMMUNIST PARTY OF CHINA)",
+        "COMMUNIST PARTY OF CHINA",
+        "POLITBURO STANDING COMMITTEE OF THE COMMUNIST PARTY OF CHINA"
+      ],
+      "per_facet": [
+        "DENG XIAOPING",
+        "HU JINTAO",
+        "JIANG ZEMIN",
+        "LI KEQIANG",
+        "MAO ZEDONG",
+        "WANG QISHAN",
+        "XI JINPING"
+      ],
+      "geo_facet": [
+        "BEIJING (CHINA)",
+        "CHINA"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "President Xi Jinping of China, center, speaking on Tuesday during the closing ceremony of the party congress in Beijing.",
+          "copyright": "Andy Wong/Associated Press",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/25/world/25china-constitution-1/25china-constitution-1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/25/world/25china-constitution-1/25china-constitution-1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/25/world/25china-constitution-1/25china-constitution-1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/07/12/world/americas/brazil-lula-da-silva-corruption.html",
+      "column": null,
+      "section": "World",
+      "byline": "By ERNESTO LONDOÑO",
+      "title": "Ex-President of Brazil Sentenced to Nearly 10 Years in Prison for Corruption",
+      "abstract": "The conviction of Luiz Inácio Lula da Silva was a stunning setback for a politician who has wielded enormous influence across Latin America.",
+      "published_date": "2017-07-12",
+      "source": "The New York Times",
+      "asset_id": 100000005255889,
+      "total_shares": 13,
+      "des_facet": [
+        "CORRUPTION (INSTITUTIONAL)",
+        "POLITICS AND GOVERNMENT",
+        "DECISIONS AND VERDICTS"
+      ],
+      "org_facet": [
+        "WORKERS' PARTY (BRAZIL)",
+        "BRIBERY AND KICKBACKS",
+        "PETROLEO BRASILEIRO SA PETROBRAS"
+      ],
+      "per_facet": [
+        "DA SILVA, LUIZ INACIO LULA"
+      ],
+      "geo_facet": [
+        "BRAZIL"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Luiz In&aacute;cio Lula da Silva, the former president of Brazil, during a news conference last year in S&atilde;o Paulo. He has planned to run for president in next year&rsquo;s election.",
+          "copyright": "Lalo de Almeida for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/07/13/world/13brazil1/13brazil1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/07/13/world/13brazil1/13brazil1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/07/13/world/13brazil1/13brazil1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/09/29/world/europe/independence-movements-catalans-kurds.html",
+      "column": "The Interpreter",
+      "section": "World",
+      "byline": "By MAX FISHER and AMANDA TAUB",
+      "title": "Catalans and Kurds Discover the Hard Truth About Secession",
+      "abstract": "Independence referendums in Spain and Iraq reveal the deep contradiction between the norms and rules of secession.",
+      "published_date": "2017-09-29",
+      "source": "The New York Times",
+      "asset_id": 100000005465366,
+      "total_shares": 14,
+      "des_facet": [
+        "REFERENDUMS",
+        "KURDS"
+      ],
+      "org_facet": "",
+      "per_facet": "",
+      "geo_facet": [
+        "CATALONIA (SPAIN)",
+        "IRAQ"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Students demonstrating in support of the Catalan independence referendum in Barcelona on Thursday.",
+          "copyright": "Samuel Aranda for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/09/29/world/int-secession1/int-secession1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/09/29/world/int-secession1/int-secession1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/09/29/world/int-secession1/int-secession1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/22/world/middleeast/iraq-kurds.html",
+      "column": "",
+      "section": "World",
+      "byline": "By DAVID ZUCCHINO",
+      "title": "Iraqi Forces Overpower Kurds, but Public Relations Battle Rages",
+      "abstract": "The two American allies are vying for international support days after Iraq drove Kurdish fighters from almost all contested areas.",
+      "published_date": "2017-10-22",
+      "source": "The New York Times",
+      "asset_id": 100000005509285,
+      "total_shares": 15,
+      "des_facet": [
+        "SECESSION AND INDEPENDENCE MOVEMENTS",
+        "KURDS"
+      ],
+      "org_facet": [
+        "IRAQI ARMY",
+        "ISLAMIC STATE IN IRAQ AND SYRIA (ISIS)",
+        "PESH MERGA"
+      ],
+      "per_facet": "",
+      "geo_facet": [
+        "KIRKUK (IRAQ)",
+        "IRAQ"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "The flag of the Kurdish autonomous region was taken down in Kirkuk last week as Iraqi forces gained control of the city.",
+          "copyright": "Ahmad Al-Rubaye/Agence France-Presse &mdash; Getty Images",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/22IRAQ-01/22IRAQ-01-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/22IRAQ-01/22IRAQ-01-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/23/world/22IRAQ-01/22IRAQ-01-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/09/16/world/americas/los-cabos-mexico-crime-tourism.html",
+      "column": "",
+      "section": "World",
+      "byline": "By KIRK SEMPLE",
+      "title": "Where Tourism Thrives in Mexico, Bloodshed and Poverty Are Blocks Away",
+      "abstract": "A surge of violence has shaken the once-peaceful tourist destination of Los Cabos, exposing stark inequality and longstanding government indifference.",
+      "published_date": "2017-09-16",
+      "source": "The New York Times",
+      "asset_id": 100000005409408,
+      "total_shares": 16,
+      "des_facet": [
+        "MURDERS, ATTEMPTED MURDERS AND HOMICIDES",
+        "DRUG CARTELS"
+      ],
+      "org_facet": [
+        "JALISCO NEW GENERATION CARTEL"
+      ],
+      "per_facet": "",
+      "geo_facet": [
+        "CABO SAN LUCAS (MEXICO)",
+        "LOS CABOS (MEXICO)",
+        "BAJA CALIFORNIA (MEXICO)",
+        "SAN JOSE DEL CABO (MEXICO)"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Near the spot where a man was killed in San José del Cabo, Mexico. Homicide cases in the region, a tourism mecca, are up more than threefold this year.",
+          "copyright": "Rodrigo Cruz for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/09/07/world/xxmexico-violence1/xxmexico-violence1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/09/07/world/xxmexico-violence1/xxmexico-violence1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/09/07/world/xxmexico-violence1/xxmexico-violence1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/19/world/europe/catalonia-independence-referendum.html",
+      "column": "",
+      "section": "World",
+      "byline": "By RAPHAEL MINDER",
+      "title": "Spain Sets Stage to Take Control of Catalonia in Independence Fight",
+      "abstract": "Carles Puigdemont, Catalonia’s leader, said in a letter to the Spanish prime minister that the regional Parliament could vote to break away if Madrid tried to seize administrative control.",
+      "published_date": "2017-10-19",
+      "source": "The New York Times",
+      "asset_id": 100000005503115,
+      "total_shares": 17,
+      "des_facet": [
+        "SECESSION AND INDEPENDENCE MOVEMENTS",
+        "POLITICS AND GOVERNMENT"
+      ],
+      "org_facet": "",
+      "per_facet": [
+        "PUIGDEMONT, CARLES (1962- )",
+        "RAJOY, MARIANO"
+      ],
+      "geo_facet": [
+        "CATALONIA (SPAIN)",
+        "SPAIN"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Carles Puigdemont, the leader of Catalonia, has requested mediation over his region’s status in Spain.",
+          "copyright": "Samuel Aranda for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/20catalonia/20catalonia-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/20catalonia/20catalonia-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/19/world/20catalonia/20catalonia-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/21/world/europe/gabrielle-deydier-france-obesity-on-ne-nait-pas-grosse.html",
+      "column": "",
+      "section": "World",
+      "byline": "By ALISSA J. RUBIN",
+      "title": "Memoir of Growing Up Fat Forces France to Look in the Mirror",
+      "abstract": "Gabrielle Deydier’s plaintive account and sociological study exposes the many ways the obese face censure and insensitivity.",
+      "published_date": "2017-10-21",
+      "source": "The New York Times",
+      "asset_id": 100000005482479,
+      "total_shares": 18,
+      "des_facet": [
+        "OBESITY",
+        "HIRING AND PROMOTION"
+      ],
+      "org_facet": "",
+      "per_facet": [
+        "DEYDIER, GABRIELLE"
+      ],
+      "geo_facet": [
+        "FRANCE"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Gabrielle Deydier, the author of &ldquo;On Ne Na&icirc;t Pas Grosse&rdquo; (&ldquo;One Is Not Born Fat&rdquo;), describes with sometimes caustic candor the daily humiliations of obesity and the serious problem of job discrimination.",
+          "copyright": "Dmitry Kostyukov for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22OBESITY-FRANCE/xxoverweight1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22OBESITY-FRANCE/xxoverweight1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/22/world/22OBESITY-FRANCE/xxoverweight1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/14/world/asia/asia-comedy-censorship.html",
+      "column": "",
+      "section": "World",
+      "byline": "By CHARLOTTE GRAHAM",
+      "title": "Heard the One About Asia’s Comedy Scene? First, You’ll Need a Permit",
+      "abstract": "Comedians in some Asian countries must have their scripts approved while finding creative ways to joke about sex and politics so as not to offend the government.",
+      "published_date": "2017-10-14",
+      "source": "The New York Times",
+      "asset_id": 100000005399778,
+      "total_shares": 19,
+      "des_facet": [
+        "COMEDY AND HUMOR"
+      ],
+      "org_facet": "",
+      "per_facet": "",
+      "geo_facet": [
+        "FAR EAST, SOUTH AND SOUTHEAST ASIA AND PACIFIC AREAS"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Storm Xu, a Chinese comedian from Shanghai, gave up a career as an engineer to become a stand-up comedian. In order to tell jokes, he must first submit his scripts to government censors.",
+          "copyright": "Yuyang Liu for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/15/world/15asia-comedy2/11asia-comedy-1-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/15/world/15asia-comedy2/11asia-comedy-1-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/15/world/15asia-comedy2/11asia-comedy-1-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/2017/10/18/world/middleeast/islamic-state-territory-attacks.html",
+      "column": "",
+      "section": "World",
+      "byline": "By MARGARET COKER, ERIC SCHMITT and RUKMINI CALLIMACHI",
+      "title": "With Loss of Its Caliphate, ISIS May Return to Guerrilla Roots",
+      "abstract": "With the fall of its capital and loss of territory, the Islamic State may be reeling but not vanquished.",
+      "published_date": "2017-10-18",
+      "source": "The New York Times",
+      "asset_id": 100000005500492,
+      "total_shares": 20,
+      "des_facet": [
+        "TERRORISM"
+      ],
+      "org_facet": [
+        "ISLAMIC STATE IN IRAQ AND SYRIA (ISIS)"
+      ],
+      "per_facet": "",
+      "geo_facet": [
+        "IRAQ",
+        "SYRIA"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "The Islamic State has lost most of the territory it controlled in Iraq and Syria. It lost the city of Mosul, above, in July.<br /><br />",
+          "copyright": "Ivor Prickett for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2017/10/18/world/18Isis2/18Isis2-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/18/world/18Isis2/18Isis2-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2017/10/18/world/18Isis2/18Isis2-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ namespace Tests;
 
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use stdClass;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -27,5 +28,17 @@ abstract class TestCase extends BaseTestCase
         );
 
         $this->assertEquals($expected, $actual, $message, $seconds);
+    }
+
+    /**
+     * Converts the given array into a stdClass instance.
+     *
+     * @param array $input
+     *
+     * @return stdClass
+     */
+    protected function objectify(array $input): stdClass
+    {
+        return (object)$input;
     }
 }

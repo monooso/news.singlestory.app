@@ -1,0 +1,9 @@
+{
+  "status": "ERROR",
+  "copyright": "Copyright (c) 2017 The New York Times Company.  All Rights Reserved.",
+  "errors": [
+    "Please specify a supported period, options are: 1,7,30",
+    "Bad Request"
+  ],
+  "results": []
+}
