@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\News\Clients\NewYorkTimes as Client;
+use App\News\NewYorkTimes;
+use App\News\Responses\NewYorkTimes as Response;
+use App\News\Transformers\NewYorkTimes as Transformer;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +17,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
     }
 
     /**
@@ -23,6 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('news', function () {
+            return new NewYorkTimes(
+                new Client(config('news.nytimes.api_key')),
+                new Response(),
+                new Transformer()
+            );
+        });
     }
 }

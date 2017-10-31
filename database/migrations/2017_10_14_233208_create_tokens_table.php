@@ -13,7 +13,7 @@ class CreateTokensTable extends Migration
             $table->integer('user_id')->unsigned()->unique();
             $table->string('password')->unique();
             $table->timestamps();
-            $table->timestamp('expires_at');
+            $table->timestamp('expires_at')->nullable();
 
             $table->foreign('user_id')
                 ->references('id')
