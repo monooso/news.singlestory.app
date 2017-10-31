@@ -24,7 +24,7 @@ class SendWeeklyStory implements ShouldQueue
     {
         $article = Article::thisWeek();
 
-        User::daily()->each(function (User $user) use ($article) {
+        User::weekly()->each(function (User $user) use ($article) {
             Mail::to($user)->queue(new WeeklyStory($article));
         });
     }
