@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration
             $table->string('byline');
             $table->string('url');
             $table->integer('popularity')->unsigned();
-            $table->enum('period', [1, 7]);
+            $table->integer('period')->unsigned();
             $table->timestamp('retrieved_at')->useCurrent();
 
             $table->index('external_id');
