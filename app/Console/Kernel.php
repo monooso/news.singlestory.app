@@ -4,6 +4,8 @@ namespace App\Console;
 
 use App\Jobs\FetchDailyNews;
 use App\Jobs\FetchWeeklyNews;
+use App\Jobs\SendDailyStory;
+use App\Jobs\SendWeeklyStory;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -19,8 +21,7 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @return void
+     * @param  Schedule $schedule
      */
     protected function schedule(Schedule $schedule)
     {
@@ -29,9 +30,19 @@ class Kernel extends ConsoleKernel
             ->saturdays()
             ->at('01:00')
             ->timezone('America/New_York');
-        
+
+        $schedule->job(SendWeeklyStory::class)
+            ->weekly()
+            ->saturdays()
+            ->at('04:00')
+            ->timezone('America/New_York');
+
         $schedule->job(FetchDailyNews::class)
             ->dailyAt('02:00')
+            ->timezone('America/New_York');
+
+        $schedule->job(SendDailyStory::class)
+            ->dailyAt('05:00')
             ->timezone('America/New_York');
     }
 
@@ -42,7 +53,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
