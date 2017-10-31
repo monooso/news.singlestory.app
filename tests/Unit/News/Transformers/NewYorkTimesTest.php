@@ -28,7 +28,7 @@ class NewYorkTimesTest extends TestCase
         $item = (new NewYorkTimes)->transform($this->getInput())->first();
 
         $this->assertEquals(
-            ['abstract', 'byline', 'id', 'popularity', 'title', 'url'],
+            ['abstract', 'byline', 'external_id', 'popularity', 'title', 'url'],
             array_keys($item)
         );
     }

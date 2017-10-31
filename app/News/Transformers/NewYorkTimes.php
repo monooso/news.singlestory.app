@@ -12,12 +12,12 @@ class NewYorkTimes
 
         return collect($data)->map(function ($item) {
             return [
-                'abstract'   => $item->abstract,
-                'byline'     => $item->byline,
-                'id'         => $item->asset_id,
-                'popularity' => $item->total_shares,
-                'title'      => $item->title,
-                'url'        => $item->url,
+                'abstract'    => $item->abstract,
+                'byline'      => $item->byline,
+                'external_id' => $item->asset_id,
+                'popularity'  => $item->total_shares,
+                'title'       => $item->title,
+                'url'         => $item->url,
             ];
         })->mostPopular($limit);
     }
