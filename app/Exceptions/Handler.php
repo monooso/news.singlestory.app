@@ -26,12 +26,29 @@ class Handler extends ExceptionHandler
      * Sentry, Bugsnag, etc.
      *
      * @param Exception $exception
-     *
-     * @return void
      */
     public function report(Exception $exception)
     {
+        if ($this->shouldReportToSentry($exception)) {
+            app('sentry')->captureException($exception);
+        }
+
         parent::report($exception);
+    }
+
+    /**
+     * Returns a boolean indicating whether we should report the given error to
+     * Sentry.
+     *
+     * @param Exception $exception
+     *
+     * @return bool
+     */
+    protected function shouldReportToSentry(Exception $exception): bool
+    {
+        return !app()->isLocal()
+            && app()->bound('sentry')
+            && $this->shouldReport($exception);
     }
 
     /**
