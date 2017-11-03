@@ -46,7 +46,7 @@ class Handler extends ExceptionHandler
      */
     protected function shouldReportToSentry(Exception $exception): bool
     {
-        return !app()->isLocal()
+        return app()->environment('production')
             && app()->bound('sentry')
             && $this->shouldReport($exception);
     }
