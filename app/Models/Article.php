@@ -36,9 +36,9 @@ class Article extends Model
     public static function thisWeek(): Article
     {
         try {
-            $threshold = Carbon::now()->subWeek();
+            $threshold = Carbon::now()->subWeek()->toDateTimeString();
 
-            return Article::whereDate('retrieved_at', '>', $threshold)
+            return Article::where('retrieved_at', '>', $threshold)
                 ->where('period', NewsWindow::WEEK)
                 ->orderBy('popularity', 'desc')
                 ->firstOrFail();
