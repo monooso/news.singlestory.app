@@ -18,6 +18,18 @@ class SendDailyStoryTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function it_does_nothing_if_there_is_no_article()
+    {
+        factory(User::class)->create(['schedule' => EmailSchedule::DAILY]);
+
+        Mail::fake();
+
+        (new SendDailyStory)->handle();
+
+        Mail::assertNotQueued(DailyStory::class);
+    }
+
+    /** @test */
     public function it_sends_an_article_to_the_daily_recipients()
     {
         factory(Article::class)->create([

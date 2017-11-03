@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Exceptions\NoAvailableArticleException;
 use App\Mail\DailyStory;
 use App\Models\Article;
 use App\Models\User;
@@ -21,7 +22,11 @@ class SendDailyStory implements ShouldQueue
      */
     public function handle()
     {
-        $article = Article::today();
+        try {
+            $article = Article::today();
+        } catch (NoAvailableArticleException $e) {
+            return;
+        }
 
         User::daily()->each(function (User $user) use ($article) {
             Mail::to($user)->queue(new DailyStory($article));

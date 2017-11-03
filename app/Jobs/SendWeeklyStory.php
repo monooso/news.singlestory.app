@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Exceptions\NoAvailableArticleException;
 use App\Mail\WeeklyStory;
 use App\Models\Article;
 use App\Models\User;
@@ -22,7 +23,11 @@ class SendWeeklyStory implements ShouldQueue
      */
     public function handle()
     {
-        $article = Article::thisWeek();
+        try {
+            $article = Article::thisWeek();
+        } catch (NoAvailableArticleException $e) {
+            return;
+        }
 
         User::weekly()->each(function (User $user) use ($article) {
             Mail::to($user)->queue(new WeeklyStory($article));
