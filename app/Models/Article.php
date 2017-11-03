@@ -48,7 +48,8 @@ class Article extends Model
     }
 
     /**
-     * Return today's articles.
+     * Return "today's" articles. In reality, we settle for any article
+     * retrieved within the past 24 hours.
      *
      * @return Article
      *
@@ -57,9 +58,9 @@ class Article extends Model
     public static function today(): Article
     {
         try {
-            $today = Carbon::now()->toDateString();
+            $threshold = Carbon::now()->subDay()->toDateTimeString();
 
-            return Article::whereDate('retrieved_at', $today)
+            return Article::where('retrieved_at', '>', $threshold)
                 ->where('period', NewsWindow::DAY)
                 ->orderBy('popularity', 'desc')
                 ->firstOrFail();

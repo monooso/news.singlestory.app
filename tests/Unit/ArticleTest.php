@@ -18,7 +18,7 @@ class ArticleTest extends TestCase
     {
         factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
-            'retrieved_at' => Carbon::now()->subDay(),
+            'retrieved_at' => Carbon::now()->subHours(25),
         ]);
 
         factory(Article::class)->create([
@@ -30,13 +30,13 @@ class ArticleTest extends TestCase
         factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'popularity'   => 10,
-            'retrieved_at' => Carbon::now(),
+            'retrieved_at' => Carbon::now()->subHours(5),
         ]);
 
         $article = factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'popularity'   => 20,
-            'retrieved_at' => Carbon::now(),
+            'retrieved_at' => Carbon::now()->subHours(6),
         ]);
 
         $result = Article::today();
