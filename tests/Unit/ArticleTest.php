@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Constants\NewsWindow;
+use App\Exceptions\NoAvailableArticleException;
 use App\Models\Article;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -44,6 +45,13 @@ class ArticleTest extends TestCase
     }
 
     /** @test */
+    public function it_throws_an_exception_if_there_is_no_today_article()
+    {
+        $this->expectException(NoAvailableArticleException::class);
+        Article::today();
+    }
+
+    /** @test */
     public function it_returns_this_weeks_article()
     {
         factory(Article::class)->create([
@@ -72,5 +80,12 @@ class ArticleTest extends TestCase
         $result = Article::thisWeek();
 
         $this->assertSame($article->id, $result->id);
+    }
+
+    /** @test */
+    public function it_throws_an_exception_if_there_is_no_this_week_article()
+    {
+        $this->expectException(NoAvailableArticleException::class);
+        Article::thisWeek();
     }
 }
