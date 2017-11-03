@@ -18,6 +18,18 @@ class SendWeeklyStoryTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function it_does_nothing_if_there_is_no_article()
+    {
+        factory(User::class)->create(['schedule' => EmailSchedule::WEEKLY]);
+
+        Mail::fake();
+
+        (new SendWeeklyStory())->handle();
+
+        Mail::assertNotQueued(WeeklyStory::class);
+    }
+
+    /** @test */
     public function it_sends_an_article_to_the_weekly_recipients()
     {
         factory(Article::class)->create([
