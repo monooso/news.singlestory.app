@@ -61,7 +61,7 @@
                 @endslot
 
                 @slot('description')
-                    Don’t receive any articles (or you can <a href="">delete your account</a>)
+                    Don’t receive any articles
                 @endslot
             @endcomponent
         </section>
