@@ -23,7 +23,7 @@ class RegistrationTest extends TestCase
         $user = factory(User::class)->create();
         $this->be($user);
 
-        $response = $this->get(route('join'));
+        $response = $this->get(route('home'));
 
         $response->assertRedirect(route('account'));
     }
@@ -46,14 +46,6 @@ class RegistrationTest extends TestCase
         $response = $this->get(route('join.next'));
 
         $response->assertRedirect(route('account'));
-    }
-
-    public function testRegistrationForm()
-    {
-        $response = $this->get(route('join'));
-
-        $response->assertSuccessful();
-        $response->assertViewIs('join.show');
     }
 
     public function testRegisteringCreatesANewUser()

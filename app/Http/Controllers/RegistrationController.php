@@ -12,11 +12,6 @@ class RegistrationController extends Controller
         $this->middleware('guest');
     }
 
-    public function show()
-    {
-        return view('join.show');
-    }
-
     public function store()
     {
         $input = request()->validate(['email' => 'required|email']);
