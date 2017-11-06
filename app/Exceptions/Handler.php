@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -26,6 +27,8 @@ class Handler extends ExceptionHandler
      * Sentry, Bugsnag, etc.
      *
      * @param Exception $exception
+     *
+     * @throws Exception
      */
     public function report(Exception $exception)
     {
@@ -62,9 +65,39 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($exception instanceof InvalidTokenException) {
-            return abort(404, $exception->getMessage());
+            $data = [
+                'title'   => 'Invalid token',
+                'message' => $exception->getMessage(),
+            ];
+
+            return response()->view('errors.404', $data, 404);
         }
 
         return parent::render($request, $exception);
+    }
+
+    /**
+     * Ensure that the 404 page receives title and message variables. There
+     * must be a nicer way to do this.
+     *
+     * @param HttpException $exception
+     *
+     * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
+     */
+    protected function renderHttpException(HttpException $exception)
+    {
+        $status = $exception->getStatusCode();
+
+        if ($status == '404') {
+            $data = [
+                'title'   => 'Page not found',
+                'message' => 'Sorry, we were unable to find the page you requested.',
+            ];
+
+            return response()->view(
+                'errors.404', $data, $status, $exception->getHeaders());
+        }
+
+        return parent::renderHttpException($exception);
     }
 }
