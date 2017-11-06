@@ -1,4 +1,4 @@
-@component('mail::message')
+@component('mail::story')
 # {{ $article->title }} #
 {{ $article->abstract }}
 
@@ -6,5 +6,5 @@
 Read the full story
 @endcomponent
 
-You can change your email preferences at any time, by [logging-in]({{ route('login') }}, "Log in to your account") to your account.
+You can change your email preferences at any time, by [logging-in]({{ route('login') }} "Log in to your account") to your account.
 @endcomponent

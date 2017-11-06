@@ -21,8 +21,11 @@ class UserLoginToken extends Mailable implements ShouldQueue
 
     public function build()
     {
-        return $this
-            ->markdown('emails.tokens.login')
+        $this->subject(trans('email.login.subject'));
+
+        $this->markdown('emails.tokens.login')
             ->with('url', route('login.validate-token', $this->user->password));
+
+        return $this;
     }
 }

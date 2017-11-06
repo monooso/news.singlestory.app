@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -26,6 +27,8 @@ class Handler extends ExceptionHandler
      * Sentry, Bugsnag, etc.
      *
      * @param Exception $exception
+     *
+     * @throws Exception
      */
     public function report(Exception $exception)
     {
@@ -62,7 +65,10 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($exception instanceof InvalidTokenException) {
-            return abort(404, $exception->getMessage());
+            return response()->view('errors.invalid-token', [
+                'title'   => 'Invalid token',
+                'message' => $exception->getMessage(),
+            ], 404);
         }
 
         return parent::render($request, $exception);

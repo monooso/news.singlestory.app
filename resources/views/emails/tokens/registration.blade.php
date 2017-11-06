@@ -1,12 +1,10 @@
-@component('mail::message')
-# Welcome to Nofomo #
-
-Click on the button below to get started.
+@component('mail::token')
+# Welcome to Single Story #
+Click on the button below to log in to your account.
 
 @component('mail::button', ['url' => $url])
-Get Started
+Log in to your account
 @endcomponent
 
-Thanks,<br>
-{{ config('app.name') }}
+This link will expire in 15 minutes.
 @endcomponent

@@ -1,0 +1,93 @@
+/* Base */
+
+body, body *:not(html):not(style):not(br):not(tr):not(code) {
+    font-family: "Avenir Next", Avenir, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    -ms-word-break: break-all;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -webkit-text-size-adjust: none;
+
+    background-color: #FFFFFF;
+    color: #666666;
+    font-size: 16px;
+    height: 100%;
+    hyphens: auto;
+    line-height: 1.3125;
+    margin: 0;
+    width: 100% !important;
+    word-break: break-all;
+}
+
+p,
+ul,
+ol,
+blockquote {
+    line-height: 1.3125;
+    text-align: left;
+}
+
+a {
+    color: #339966;
+}
+
+a img {
+    border: none;
+}
+
+/* Typography */
+h1 {
+    color: #333333;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 1.1667;
+    margin: 0 0 14px;
+    text-align: left;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.3125;
+    margin: 0 0 14px;
+    text-align: left;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Buttons */
+
+.action {
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+
+    margin: 30px auto;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.button {
+    -webkit-text-size-adjust: none;
+
+    background-color: #66CC99;
+    border-top: 10px solid #66CC99;
+    border-right: 18px solid #66CC99;
+    border-bottom: 10px solid #66CC99;
+    border-left: 18px solid #66CC99;
+    border-radius: 3px;
+    color: #FFF;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.has-text-centered,
+.has-text-centered h1,
+.has-text-centered p {
+    text-align: center;
+}

@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// Bulma framework style overrides.
+// Must be loaded _after_ the Bulma framework.
+// -----------------------------------------------------------------------------
+
+a {
+  @include fade;
+  text-decoration: underline;
+}
+
+p:not(:last-child) {
+  margin-bottom: 0.875rem;
+}
+
+.box {
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+  @include fade;
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+}
+
+.notification {
+  border-radius: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.4375rem;
+}
+
+.section {
+  padding: 1.3125rem 10px;
+
+  @include from($tablet) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.16667;
+
+  @include from($tablet) {
+    font-size: 2.25rem;
+  }
+}
+
+.title:not(:last-child) {
+  margin-bottom: 0.875rem;
+}

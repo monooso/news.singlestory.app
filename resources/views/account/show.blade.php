@@ -1,37 +1,73 @@
 @extends('layouts.app')
 
-@section('content')
-    @if (session()->has('status'))
-        <div>
-            <p>{{ session('status') }}</p>
-        </div>
-    @endif
+@section('meta_title', 'Manage your email preferences')
+@section('meta_description', 'How frequently should we email you?')
 
+@if ($errors->has('schedule'))
+    @push('statuses')
+        @component('components.status-error')
+            {{ $errors->first('schedule') }}
+        @endcomponent
+    @endpush
+@endif
+
+@if (session()->has('status'))
+    @push('statuses')
+        @component('components.status-success')
+            {{ session('status') }}
+        @endcomponent
+    @endpush
+@endif
+
+@section('nav')
+    <a href="{{ route('logout') }}" title="Log out of your account">Log out</a>
+@endsection
+
+@section('content')
     <form action="{{ route('account') }}" method="post">
         {{ csrf_field() }}
 
-        <div>
-            @if ($errors->has('schedule'))
-                <strong>{{ $errors->first('schedule') }}</strong>
-            @endif
+        <section class="section has-text-centered">
+            <h1 class="title">Email preferences</h1>
+            <label for="schedule">
+                How frequently should we email you?
+            </label>
+        </section>
 
-            <label for="schedule">How frequently would you like us to email you?</label>
+        <section class="section">
+            @component('components.email-preference', ['selected' => $user->schedule, 'value' => 'daily'])
+                @slot('title')
+                    Every day
+                @endslot
 
-            @foreach ($schedule_options as $value => $label)
-                <label>
-                    <input name="schedule"
-                           type="radio"
-                           id="schedule--{{ $value }}"
-                           value="{{ $value }}"
-                           @if ($value === $user->schedule)checked="checked"@endif
-                    />
-                    {{ $label }}
-                </label>
-            @endforeach
-        </div>
+                @slot('description')
+                    Receive one article every day, at around 5am EST
+                @endslot
+            @endcomponent
 
-        <div>
-            <input type="submit" value="Save Preferences" />
-        </div>
+            @component('components.email-preference', ['selected' => $user->schedule, 'value' => 'weekly'])
+                @slot('title')
+                    Once a week
+                @endslot
+
+                @slot('description')
+                    Receive one article every Saturday, at around 5am EST
+                @endslot
+            @endcomponent
+
+            @component('components.email-preference', ['selected' => $user->schedule, 'value' => 'never'])
+                @slot('title')
+                    Never
+                @endslot
+
+                @slot('description')
+                    Don’t receive any articles
+                @endslot
+            @endcomponent
+        </section>
+
+        <section class="section">
+            <input class="button is-primary is-medium" type="submit" value="Save preferences"/>
+        </section>
     </form>
 @endsection

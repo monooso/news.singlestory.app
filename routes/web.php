@@ -8,8 +8,9 @@ Route::get('/', 'HomeController@show')->name('home');
 // -----------------------------------------------------------------------------
 // Join
 // -----------------------------------------------------------------------------
-Route::get('join', 'RegistrationController@show')->name('join');
-Route::post('join', 'RegistrationController@store');
+Route::redirect('join', '/', 301);
+
+Route::post('join', 'RegistrationController@store')->name('join');
 
 Route::get('join/next', 'ConfirmRegistrationController@show')
     ->name('join.next');

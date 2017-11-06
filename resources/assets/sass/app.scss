@@ -1,9 +1,15 @@
+@import "variables.scss";
+@import "effects.scss";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/base/_all";
+@import "~bulma/sass/components/level";
+@import "~bulma/sass/elements/box";
+@import "~bulma/sass/elements/button";
+@import "~bulma/sass/elements/form";
+@import "~bulma/sass/elements/notification";
+@import "~bulma/sass/elements/title";
+@import "~bulma/sass/grid/columns";
 
-// Variables
-@import "variables";
-
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "overrides.scss";
+@import "custom.scss";
