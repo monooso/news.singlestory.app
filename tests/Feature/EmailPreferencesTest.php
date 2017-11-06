@@ -121,22 +121,6 @@ class EmailPreferencesTest extends TestCase
         $response->assertViewHas('user', $user);
     }
 
-    public function testTheAccountViewReceivesTheEmailScheduleOptions()
-    {
-        $user = factory(User::class)->create();
-        $this->be($user);
-
-        $response = $this->get(route('account'));
-
-        $response->assertViewIs('account.show');
-
-        $response->assertViewHas('schedule_options', [
-            EmailSchedule::DAILY  => trans('account.schedule.daily'),
-            EmailSchedule::WEEKLY => trans('account.schedule.weekly'),
-            EmailSchedule::NEVER  => trans('account.schedule.never'),
-        ]);
-    }
-
     protected function setUp()
     {
         parent::setUp();
