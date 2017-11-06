@@ -17,7 +17,7 @@
             <td align="center">
                 <table cellpadding="0" cellspacing="0">
                     <tr>
-                        <td><img src="/assets/images/email-logo.svg" /></td>
+                        <td><img src="{{ url("/assets/images/email-logo.png") }}" height="21px" /></td>
                     </tr>
                 </table>
             </td>
