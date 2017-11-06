@@ -8,6 +8,10 @@ a {
   text-decoration: underline;
 }
 
+p:not(:last-child) {
+  margin-bottom: 0.875rem;
+}
+
 .box {
   border: 1px solid #CCC;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -48,5 +52,5 @@ a {
 }
 
 .title:not(:last-child) {
-  margin-bottom: 0.4375rem;
+  margin-bottom: 0.875rem;
 }
