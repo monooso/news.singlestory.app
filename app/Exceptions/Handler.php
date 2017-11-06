@@ -65,39 +65,12 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($exception instanceof InvalidTokenException) {
-            $data = [
+            return response()->view('errors.invalid-token', [
                 'title'   => 'Invalid token',
                 'message' => $exception->getMessage(),
-            ];
-
-            return response()->view('errors.404', $data, 404);
+            ], 404);
         }
 
         return parent::render($request, $exception);
-    }
-
-    /**
-     * Ensure that the 404 page receives title and message variables. There
-     * must be a nicer way to do this.
-     *
-     * @param HttpException $exception
-     *
-     * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
-     */
-    protected function renderHttpException(HttpException $exception)
-    {
-        $status = $exception->getStatusCode();
-
-        if ($status == '404') {
-            $data = [
-                'title'   => 'Page not found',
-                'message' => 'Sorry, we were unable to find the page you requested.',
-            ];
-
-            return response()->view(
-                'errors.404', $data, $status, $exception->getHeaders());
-        }
-
-        return parent::renderHttpException($exception);
     }
 }
