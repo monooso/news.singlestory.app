@@ -8,7 +8,7 @@
     <title>@yield('meta_title')</title>
     <meta name="description" content="@yield('meta_description')" />
 
-    <link rel="stylesheet" href="/assets/styles/app.css" />
+    <link rel="stylesheet" href="{{ mix('/assets/styles/app.css') }}" />
 </head>
 
 <body>
