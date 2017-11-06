@@ -1,0 +1,87 @@
+// -----------------------------------------------------------------------------
+// Custom Single Story styles.
+// Must be loaded _after_ the Bulma framework.
+// -----------------------------------------------------------------------------
+body {
+  background-attachment: fixed;
+  background-color: #EEE;
+  background-image: url(/assets/images/berlin-wall-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.email-preference label {
+  @include fade;
+
+  border: 1px solid transparent;
+  border-radius: $radius;
+  cursor: pointer;
+  display: block;
+  padding: 0.875rem 20px;
+
+  &:hover {
+    background: $white-bis;
+  }
+}
+
+.email-preference input[type='radio'] {
+  outline: 0;
+  user-select: none;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+}
+
+.email-preference input[type='radio']:checked + label {
+  border-color: $grey;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.email-preference + .email-preference {
+  margin-top: 0.4375rem;
+}
+
+.main {
+  padding: 0 10px;
+}
+
+.nav-links a {
+  color: $text;
+  display: inline-block;
+  font-size: $size-7;
+  text-decoration: none;
+
+  &:hover {
+    color: $link;
+  }
+
+  & + a {
+    margin-left: 20px;
+  }
+}
+
+.nav-logo {
+  padding-top: 1px;
+}
+
+.next-email {
+  display: block;
+  margin-bottom: -20px;
+  width: 100%;
+}
+
+.root {
+  margin: 0 auto;
+  max-width: 47.5rem;
+  min-height: 100vh;
+  padding: 4rem 10px;
+
+  @include from($tablet) {
+    padding: 4rem 40px;
+  }
+}

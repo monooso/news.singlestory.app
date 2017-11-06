@@ -1,0 +1,8 @@
+// -----------------------------------------------------------------------------
+// Effect mixins.
+// -----------------------------------------------------------------------------
+@mixin fade {
+  transition: background-color $fade-duration ease-in-out,
+              border-color $fade-duration ease-in-out,
+              color $fade-duration ease-in-out;
+}

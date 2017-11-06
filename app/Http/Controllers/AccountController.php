@@ -14,19 +14,7 @@ class AccountController extends Controller
 
     public function show()
     {
-        return view('account.show', [
-            'user'             => auth()->user(),
-            'schedule_options' => $this->getEmailScheduleOptions(),
-        ]);
-    }
-
-    protected function getEmailScheduleOptions(): array
-    {
-        return [
-            EmailSchedule::DAILY  => trans('account.schedule.daily'),
-            EmailSchedule::WEEKLY => trans('account.schedule.weekly'),
-            EmailSchedule::NEVER  => trans('account.schedule.never'),
-        ];
+        return view('account.show', ['user' => auth()->user()]);
     }
 
     public function store()
