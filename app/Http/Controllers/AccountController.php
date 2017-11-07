@@ -27,6 +27,6 @@ class AccountController extends Controller
 
         return redirect()
             ->route('account')
-            ->with('status', trans('account.preferences.updated'));
+            ->with('status', trans('account.updated'));
     }
 }
