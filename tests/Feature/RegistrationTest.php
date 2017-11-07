@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Mail\UserLoginToken;
 use App\Mail\UserRegistrationToken;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -11,12 +12,6 @@ use Tests\TestCase;
 class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
-
-    protected function setUp()
-    {
-        parent::setUp();
-        Mail::fake();
-    }
 
     public function testAnAuthenticatedUserCannotAccessTheRegistrationForm()
     {
@@ -96,5 +91,18 @@ class RegistrationTest extends TestCase
         $response = $this->post(route('join', ['email' => $user->email]));
 
         $response->assertRedirect(route('login.next'));
+
+        Mail::assertQueued(
+            UserLoginToken::class,
+            function ($mail) use ($user) {
+                return $mail->hasTo($user->email);
+            }
+        );
+    }
+
+    protected function setUp()
+    {
+        parent::setUp();
+        Mail::fake();
     }
 }
