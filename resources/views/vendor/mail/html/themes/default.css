@@ -6,20 +6,29 @@ body, body *:not(html):not(style):not(br):not(tr):not(code) {
 }
 
 body {
-    -ms-word-break: break-all;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    -webkit-text-size-adjust: none;
-
     background-color: #FFFFFF;
     color: #666666;
     font-size: 16px;
     height: 100%;
-    hyphens: auto;
     line-height: 1.3125;
     margin: 0;
     width: 100% !important;
-    word-break: break-all;
+}
+
+body,
+h1,
+p,
+td {
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -ms-word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -webkit-text-size-adjust: none;
+
+    hyphens: auto;
+    overflow-wrap: break-word;
+    white-space: normal;
+    word-break: normal;
 }
 
 p,
@@ -41,7 +50,7 @@ a img {
 /* Typography */
 h1 {
     color: #333333;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: normal;
     line-height: 1.1667;
     margin: 0 0 14px;
