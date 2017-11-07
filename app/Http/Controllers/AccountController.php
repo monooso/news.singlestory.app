@@ -12,6 +12,20 @@ class AccountController extends Controller
         $this->middleware('auth');
     }
 
+    public function delete()
+    {
+        return view('account.delete');
+    }
+
+    public function destroy()
+    {
+        auth()->user()->delete();
+
+        return redirect()
+            ->route('home')
+            ->with('status', trans('account.deleted'));
+    }
+
     public function show()
     {
         return view('account.show', ['user' => auth()->user()]);
@@ -27,6 +41,6 @@ class AccountController extends Controller
 
         return redirect()
             ->route('account')
-            ->with('status', trans('account.preferences.updated'));
+            ->with('status', trans('account.updated'));
     }
 }

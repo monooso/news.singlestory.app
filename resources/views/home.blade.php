@@ -7,6 +7,22 @@
     <a href="{{ route('login') }}" title="Log in to your account">Log in</a>
 @endsection
 
+@if ($errors->has('email'))
+    @push('statuses')
+        @component('components.status-error')
+            {{ $errors->first('email') }}
+        @endcomponent
+    @endpush
+@endif
+
+@if (session()->has('status'))
+    @push('statuses')
+        @component('components.status-success')
+            {{ session('status') }}
+        @endcomponent
+    @endpush
+@endif
+
 @section('content')
     <section class="section has-text-centered">
         <h1 class="title">Get the one news story that matters most, delivered straight to your inbox</h1>

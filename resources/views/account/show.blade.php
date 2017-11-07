@@ -61,7 +61,7 @@
                 @endslot
 
                 @slot('description')
-                    Don’t receive any articles
+                    Don’t receive any articles (or you can <a href="{{ route('account.delete') }}">delete your account</a>)
                 @endslot
             @endcomponent
         </section>

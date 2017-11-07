@@ -35,3 +35,8 @@ Route::get('logout', 'SessionController@destroy')->name('logout');
 // -----------------------------------------------------------------------------
 Route::get('account', 'AccountController@show')->name('account');
 Route::post('account', 'AccountController@store');
+
+Route::get('account/delete', 'AccountController@delete')
+    ->name('account.delete');
+
+Route::delete('account', 'AccountController@destroy')->name('account.destroy');

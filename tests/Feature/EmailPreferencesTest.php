@@ -29,7 +29,7 @@ class EmailPreferencesTest extends TestCase
         ]);
 
         $response->assertRedirect(route('account'));
-        $response->assertSessionHas('status', trans('account.preferences.updated'));
+        $response->assertSessionHas('status', trans('account.updated'));
     }
 
     public function testAnAuthenticatedUserCanChooseToReceiveDailyEmails()
