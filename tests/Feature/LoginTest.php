@@ -12,7 +12,8 @@ class LoginTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testAnAuthenticatedUserCannotAccessTheLoginForm()
+    /** @test */
+    public function an_authenticated_user_cannot_access_the_login_form()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -22,7 +23,8 @@ class LoginTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testAnAuthenticatedUserCannotSubmitTheLoginForm()
+    /** @test */
+    public function an_authenticated_user_cannot_submit_the_login_form()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -32,7 +34,8 @@ class LoginTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testAnAuthenticatedUserCannotViewTheNextStepPage()
+    /** @test */
+    public function an_authenticated_user_cannot_view_the_next_step_page()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -42,7 +45,8 @@ class LoginTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testLoginForm()
+    /** @test */
+    public function login_form()
     {
         $response = $this->get(route('login'));
 
@@ -50,7 +54,8 @@ class LoginTest extends TestCase
         $response->assertViewIs('login.show');
     }
 
-    public function testLoginCreatesAOneTimePassword()
+    /** @test */
+    public function login_creates_a_one_time_password()
     {
         $user = factory(User::class)->create();
 
@@ -59,7 +64,8 @@ class LoginTest extends TestCase
         $this->assertDatabaseHas('tokens', ['user_id' => $user->id]);
     }
 
-    public function testLoginWithAnUnknownUserRedirectsWithErrors()
+    /** @test */
+    public function login_with_an_unknown_user_redirects_with_errors()
     {
         $response = $this->post(route('login'), ['email' => 'john@doe.com']);
 
@@ -67,7 +73,8 @@ class LoginTest extends TestCase
         $response->assertSessionHasErrors(['email']);
     }
 
-    public function testLoginRedirectsToTheNextStep()
+    /** @test */
+    public function login_redirects_to_the_next_step()
     {
         $user = factory(User::class)->create();
 
@@ -76,7 +83,8 @@ class LoginTest extends TestCase
         $response->assertRedirect(route('login.next'));
     }
 
-    public function testLoginSendsAnEmail()
+    /** @test */
+    public function login_sends_an_email()
     {
         $user = factory(User::class)->create();
 

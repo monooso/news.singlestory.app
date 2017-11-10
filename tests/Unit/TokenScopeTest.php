@@ -11,7 +11,8 @@ class TokenScopeTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testResultsAreLimitedToNonExpiredTokensByDefault()
+    /** @test */
+    public function results_are_limited_to_non_expired_tokens_by_default()
     {
         factory(Token::class)->create([
             'expires_at' => Carbon::now()->subMonths(2),
@@ -27,7 +28,8 @@ class TokenScopeTest extends TestCase
         $this->assertEquals($token->password, $result->first()->password);
     }
 
-    public function testWithExpiredIncludesExpiredTokens()
+    /** @test */
+    public function with_expired_includes_expired_tokens()
     {
         factory(Token::class)->create([
             'expires_at' => Carbon::now()->subMonths(2),

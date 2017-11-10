@@ -13,7 +13,8 @@ class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testAnAuthenticatedUserCannotAccessTheRegistrationForm()
+    /** @test */
+    public function an_authenticated_user_cannot_access_the_registration_form()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -23,7 +24,8 @@ class RegistrationTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testAnAuthenticatedUserCannotSubmitTheRegistrationForm()
+    /** @test */
+    public function an_authenticated_user_cannot_submit_the_registration_form()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -33,7 +35,8 @@ class RegistrationTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testAnAuthenticatedUserCannotViewTheNextStepPage()
+    /** @test */
+    public function an_authenticated_user_cannot_view_the_next_step_page()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -43,7 +46,8 @@ class RegistrationTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testRegisteringCreatesANewUser()
+    /** @test */
+    public function registering_creates_a_new_user()
     {
         $response = $this->post(route('join'), ['email' => 'john@doe.com']);
 
@@ -51,7 +55,8 @@ class RegistrationTest extends TestCase
         $this->assertDatabaseHas('users', ['email' => 'john@doe.com']);
     }
 
-    public function testRegisteringCreatesAOneTimePassword()
+    /** @test */
+    public function registering_creates_a_one_time_password()
     {
         $this->post(route('join'), ['email' => 'john@doe.com']);
 
@@ -60,7 +65,8 @@ class RegistrationTest extends TestCase
         $this->assertDatabaseHas('tokens', ['user_id' => $user->id]);
     }
 
-    public function testRegisteringSendsALoginTokenEmail()
+    /** @test */
+    public function registering_sends_a_login_token_email()
     {
         $this->post(route('join'), ['email' => 'john@doe.com']);
 
@@ -74,7 +80,8 @@ class RegistrationTest extends TestCase
         );
     }
 
-    public function testRegisteringWithAnInvalidEmailDisplaysAnError()
+    /** @test */
+    public function registering_with_an_invalid_email_displays_an_error()
     {
         $response = $this->post(route('join'), ['email' => 'nope']);
 
@@ -84,7 +91,8 @@ class RegistrationTest extends TestCase
         $response->assertSessionHasErrors(['email']);
     }
 
-    public function testRegisteringWithADuplicateEmailActsAsALoginRequest()
+    /** @test */
+    public function registering_with_a_duplicate_email_acts_as_a_login_request()
     {
         $user = factory(User::class)->create();
 

@@ -14,7 +14,8 @@ class TokenExpirationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testCreatingANewInstanceSetsExpiresAt()
+    /** @test */
+    public function creating_a_new_instance_sets_expires_at()
     {
         $lifetime = 30;
 
@@ -27,7 +28,8 @@ class TokenExpirationTest extends TestCase
             Carbon::now()->addMinutes($lifetime), $token->expires_at, 2);
     }
 
-    public function testSavingANewInstanceSetsExpiresAt()
+    /** @test */
+    public function saving_a_new_instance_sets_expires_at()
     {
         $lifetime = 45;
 
@@ -42,7 +44,8 @@ class TokenExpirationTest extends TestCase
             Carbon::now()->addMinutes($lifetime), $token->expires_at, 2);
     }
 
-    public function testExpiresAtMayNotBeModified()
+    /** @test */
+    public function expires_at_may_not_be_modified()
     {
         $expiresAt = Carbon::now()->subYear();
 
