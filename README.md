@@ -16,5 +16,3 @@ One article doesn’t sound like much, but because it's the most-shared article,
 So instead of losing an hour or three following yet another Twitter war amongst random strangers with very important opinions, you get to read a professionally-researched and written article on the subject.
 
 And then you can get on with your day.
-
-## Contributing ##
