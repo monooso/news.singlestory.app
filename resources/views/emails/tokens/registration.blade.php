@@ -6,5 +6,5 @@ Click on the button below to finish setting up your account.
 Finish setting up your account
 @endcomponent
 
-This link will expire in 15 minutes.
+This link will expire in {{ config('token.lifetime') }} minutes.
 @endcomponent

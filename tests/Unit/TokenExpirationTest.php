@@ -6,6 +6,7 @@ use App\Models\Token;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 
@@ -15,28 +16,30 @@ class TokenExpirationTest extends TestCase
 
     public function testCreatingANewInstanceSetsExpiresAt()
     {
+        $lifetime = 30;
+
+        Config::set('token.lifetime', $lifetime);
+
         $user = factory(User::class)->create();
         $token = Token::create(['user_id' => $user->id]);
 
         $this->assertTimeWithin(
-            Carbon::now()->addMinutes(15),
-            $token->expires_at,
-            2
-        );
+            Carbon::now()->addMinutes($lifetime), $token->expires_at, 2);
     }
 
     public function testSavingANewInstanceSetsExpiresAt()
     {
+        $lifetime = 45;
+
+        Config::set('token.lifetime', $lifetime);
+
         $user = factory(User::class)->create();
 
         $token = new Token(['user_id' => $user->id]);
         $token->save();
 
         $this->assertTimeWithin(
-            Carbon::now()->addMinutes(15),
-            $token->expires_at,
-            2
-        );
+            Carbon::now()->addMinutes($lifetime), $token->expires_at, 2);
     }
 
     public function testExpiresAtMayNotBeModified()

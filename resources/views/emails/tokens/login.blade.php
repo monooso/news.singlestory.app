@@ -6,5 +6,5 @@ Click on the button below to log in to your account.
 Log in to your account
 @endcomponent
 
-This link will expire in 15 minutes.
+This link will expire in {{ config('token.lifetime') }} minutes.
 @endcomponent

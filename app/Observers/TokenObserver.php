@@ -17,7 +17,9 @@ class TokenObserver
     {
         $this->deleteUserTokens($instance->user_id);
 
-        $instance->expires_at = Carbon::now()->addMinutes(15);
+        $instance->expires_at = Carbon::now()
+            ->addMinutes(config('token.lifetime'));
+
         $instance->password = Uuid::uuid4()->toString();
     }
 
