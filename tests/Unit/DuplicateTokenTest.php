@@ -11,7 +11,8 @@ class DuplicateTokenTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testCreatingANewUserTokenDeletesExistingUserTokens()
+    /** @test */
+    public function creating_a_new_user_token_deletes_existing_user_tokens()
     {
         $user = factory(User::class)->create();
         $token = factory(Token::class)->create(['user_id' => $user->id]);

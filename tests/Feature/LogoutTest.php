@@ -11,14 +11,16 @@ class LogoutTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testAGuestUserCannotLogOut()
+    /** @test */
+    public function a_guest_user_cannot_log_out()
     {
         $response = $this->get(route('logout'));
 
         $response->assertRedirect(route('login'));
     }
 
-    public function testAnAuthenticatedUserCanLogOut()
+    /** @test */
+    public function an_authenticated_user_can_log_out()
     {
         $user = factory(User::class)->create();
         $this->be($user);

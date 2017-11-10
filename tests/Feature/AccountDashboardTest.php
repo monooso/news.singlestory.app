@@ -11,7 +11,8 @@ class AccountDashboardTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testAGuestUserCannotAccessTheAccountDashboard()
+    /** @test */
+    public function a_guest_user_cannot_access_the_account_dashboard()
     {
         $response = $this->get(route('account'));
 

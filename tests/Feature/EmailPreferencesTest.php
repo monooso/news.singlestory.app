@@ -12,14 +12,16 @@ class EmailPreferencesTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testAGuestUserCannotSubmitTheEmailPreferencesForm()
+    /** @test */
+    public function a_guest_user_cannot_submit_the_email_preferences_form()
     {
         $response = $this->post(route('account'));
 
         $response->assertRedirect(route('login'));
     }
 
-    public function testAConfirmationMessageIsDisplayedWhenTheEmailPreferencesAreSaved()
+    /** @test */
+    public function a_confirmation_message_is_displayed_when_the_email_preferences_are_saved()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -32,7 +34,8 @@ class EmailPreferencesTest extends TestCase
         $response->assertSessionHas('status', trans('account.updated'));
     }
 
-    public function testAnAuthenticatedUserCanChooseToReceiveDailyEmails()
+    /** @test */
+    public function an_authenticated_user_can_choose_to_receive_daily_emails()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -49,7 +52,8 @@ class EmailPreferencesTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testAnAuthenticatedUserCanChooseToReceiveWeeklyEmails()
+    /** @test */
+    public function an_authenticated_user_can_choose_to_receive_weekly_emails()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -66,7 +70,8 @@ class EmailPreferencesTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testAnAuthenticatedUserCanChooseToReceiveNoEmails()
+    /** @test */
+    public function an_authenticated_user_can_choose_to_receive_no_emails()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -83,7 +88,8 @@ class EmailPreferencesTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testAnErrorIsReturnedWhenTheScheduleIsMissing()
+    /** @test */
+    public function an_error_is_returned_when_the_schedule_is_missing()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -94,7 +100,8 @@ class EmailPreferencesTest extends TestCase
         $response->assertSessionHasErrors('schedule');
     }
 
-    public function testAnErrorIsReturnedWhenAttemptingToSetAnInvalidSchedule()
+    /** @test */
+    public function an_error_is_returned_when_attempting_to_set_an_invalid_schedule()
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -110,7 +117,8 @@ class EmailPreferencesTest extends TestCase
         $response->assertSessionHasErrors('schedule');
     }
 
-    public function testTheAccountViewReceivesTheCurrentlyAuthenticatedUser()
+    /** @test */
+    public function the_account_view_receives_the_currently_authenticated_user()
     {
         $user = factory(User::class)->create();
         $this->be($user);

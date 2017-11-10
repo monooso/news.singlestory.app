@@ -10,7 +10,8 @@ class RedeemTokenTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testRedeemingATokenDeletesIt()
+    /** @test */
+    public function redeeming_a_token_deletes_it()
     {
         $token = factory(Token::class)->create();
 

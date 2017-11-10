@@ -12,7 +12,8 @@ class RedeemTokenTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testAnAuthenticatedUserCannotRedeemAToken()
+    /** @test */
+    public function an_authenticated_user_cannot_redeem_a_token()
     {
         $user = factory(User::class)->create();
         $token = factory(Token::class)->create();
@@ -25,7 +26,8 @@ class RedeemTokenTest extends TestCase
         $this->assertAuthenticatedAs($user);
     }
 
-    public function testRedeemValidToken()
+    /** @test */
+    public function redeem_valid_token()
     {
         $token = factory(Token::class)->create();
 
@@ -34,7 +36,8 @@ class RedeemTokenTest extends TestCase
         $response->assertRedirect(route('account'));
     }
 
-    public function testRedeemValidTokenLogsUserIn()
+    /** @test */
+    public function redeem_valid_token_logs_user_in()
     {
         $token = factory(Token::class)->create();
 
@@ -43,7 +46,8 @@ class RedeemTokenTest extends TestCase
         $this->assertAuthenticatedAs($token->user);
     }
 
-    public function testRedeemValidTokenDeletesTheToken()
+    /** @test */
+    public function redeem_valid_token_deletes_the_token()
     {
         $token = factory(Token::class)->create();
 
@@ -52,7 +56,8 @@ class RedeemTokenTest extends TestCase
         $this->assertDatabaseMissing('tokens', ['id' => $token->id]);
     }
 
-    public function testRedeemInvalidTokenRedirectsToInvalidTokenPage()
+    /** @test */
+    public function redeem_invalid_token_redirects_to_invalid_token_page()
     {
         $response = $this->get(route('login.validate-token', 'abc123'));
 
@@ -60,7 +65,8 @@ class RedeemTokenTest extends TestCase
         $response->assertSeeText('abc123 is not a valid token');
     }
 
-    public function testRedeemInvalidTokenDoesNotLogUserIn()
+    /** @test */
+    public function redeem_invalid_token_does_not_log_user_in()
     {
         $this->get(route('login.validate-token', 'abc123'));
 

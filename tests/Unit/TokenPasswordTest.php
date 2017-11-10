@@ -11,7 +11,8 @@ class TokenPasswordTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testCreatingANewInstanceSetsThePassword()
+    /** @test */
+    public function creating_a_new_instance_sets_the_password()
     {
         $user = factory(User::class)->create();
         $password = Token::create(['user_id' => $user->id]);
@@ -19,7 +20,8 @@ class TokenPasswordTest extends TestCase
         $this->assertNotNull($password->password);
     }
 
-    public function testPasswordsAreUnique()
+    /** @test */
+    public function passwords_are_unique()
     {
         $passwords = [];
 
@@ -33,7 +35,8 @@ class TokenPasswordTest extends TestCase
         }
     }
 
-    public function testSavingANewInstanceSetsThePassword()
+    /** @test */
+    public function saving_a_new_instance_sets_the_password()
     {
         $user = factory(User::class)->create();
 
@@ -43,7 +46,8 @@ class TokenPasswordTest extends TestCase
         $this->assertNotNull($password->password);
     }
 
-    public function testThePasswordMayNotBeModified()
+    /** @test */
+    public function the_password_may_not_be_modified()
     {
         $user = factory(User::class)->create();
 
