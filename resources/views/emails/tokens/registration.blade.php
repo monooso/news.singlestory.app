@@ -1,9 +1,9 @@
 @component('mail::token')
 # Welcome to Single Story #
-Click on the button below to log in to your account.
+Click on the button below to finish setting up your account.
 
 @component('mail::button', ['url' => $url])
-Log in to your account
+Finish setting up your account
 @endcomponent
 
 This link will expire in 15 minutes.
