@@ -22,7 +22,7 @@ Route::get('login', 'LoginController@show')->name('login');
 Route::post('login', 'LoginController@store');
 Route::get('login/next', 'SessionController@show')->name('login.next');
 
-Route::get('login/token/{token}','SessionController@store')
+Route::get('login/token/{token}', 'SessionController@store')
     ->name('login.validate-token');
 
 // -----------------------------------------------------------------------------

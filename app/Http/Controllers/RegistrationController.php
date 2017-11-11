@@ -22,12 +22,12 @@ class RegistrationController extends Controller
             // If the user already exists, treat this as a login request.
             $user = User::whereEmail($input['email'])->firstOrFail();
             event(new LoginTokenRequested($user));
+
             return redirect()->route('login.next');
-
         } catch (ModelNotFoundException $e) {
-
             $user = User::create($input);
             event(new UserRegistered($user));
+
             return redirect()->route('join.next');
         }
     }

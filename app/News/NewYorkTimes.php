@@ -37,7 +37,7 @@ class NewYorkTimes implements Source
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function mostPopularToday(): Collection
     {
@@ -63,7 +63,7 @@ class NewYorkTimes implements Source
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function mostPopularThisWeek(): Collection
     {

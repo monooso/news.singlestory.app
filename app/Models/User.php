@@ -25,7 +25,7 @@ class User extends Model implements AuthenticatableContract
      */
     public static function daily(): Collection
     {
-        return User::where('schedule', EmailSchedule::DAILY)->get();
+        return static::where('schedule', EmailSchedule::DAILY)->get();
     }
 
     /**
@@ -35,7 +35,7 @@ class User extends Model implements AuthenticatableContract
      */
     public static function weekly(): Collection
     {
-        return User::where('schedule', EmailSchedule::WEEKLY)->get();
+        return static::where('schedule', EmailSchedule::WEEKLY)->get();
     }
 
     /**
@@ -55,7 +55,7 @@ class User extends Model implements AuthenticatableContract
      */
     public function getPasswordAttribute()
     {
-        return (string)$this->token;
+        return (string) $this->token;
     }
 
     /**

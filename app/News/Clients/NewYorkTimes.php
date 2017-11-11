@@ -46,7 +46,8 @@ class NewYorkTimes
                 'User-Agent' => 'news.singlestory/1.0',
                 'Accept'     => 'application/json',
             ],
-            'query'           => ['api-key' => $this->apiKey],
+
+            'query' => ['api-key' => $this->apiKey],
         ]);
     }
 

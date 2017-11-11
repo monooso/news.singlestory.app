@@ -29,16 +29,16 @@ class Article extends Model
     /**
      * Return this week's article.
      *
-     * @return Article
+     * @return self
      *
      * @throws NoAvailableArticleException
      */
-    public static function thisWeek(): Article
+    public static function thisWeek(): self
     {
         try {
             $threshold = Carbon::now()->subWeek()->toDateTimeString();
 
-            return Article::where('retrieved_at', '>', $threshold)
+            return static::where('retrieved_at', '>', $threshold)
                 ->where('period', NewsWindow::WEEK)
                 ->orderBy('popularity', 'desc')
                 ->firstOrFail();
@@ -51,16 +51,16 @@ class Article extends Model
      * Return "today's" articles. In reality, we settle for any article
      * retrieved within the past 24 hours.
      *
-     * @return Article
+     * @return self
      *
      * @throws NoAvailableArticleException
      */
-    public static function today(): Article
+    public static function today(): self
     {
         try {
             $threshold = Carbon::now()->subDay()->toDateTimeString();
 
-            return Article::where('retrieved_at', '>', $threshold)
+            return static::where('retrieved_at', '>', $threshold)
                 ->where('period', NewsWindow::DAY)
                 ->orderBy('popularity', 'desc')
                 ->firstOrFail();

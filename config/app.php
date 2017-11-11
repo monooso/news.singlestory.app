@@ -232,7 +232,7 @@ return [
         // ---------------------------------------------------------------------
         // Application facades.
         // ---------------------------------------------------------------------
-        'News' => App\Support\Facades\News::class,
+        'News'         => App\Support\Facades\News::class,
     ],
 
 ];
