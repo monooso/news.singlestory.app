@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('news')) {
+if (! function_exists('news')) {
     /**
      * Global news helper function.
      *
@@ -11,4 +11,3 @@ if (!function_exists('news')) {
         return app()->make('news');
     }
 }
-

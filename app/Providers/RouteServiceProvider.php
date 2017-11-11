@@ -25,7 +25,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('token', Token::class, function ($password) {
-            $message = sprintf("%s is not a valid token", $password);
+            $message = sprintf('%s is not a valid token', $password);
             throw new InvalidTokenException($message);
         });
     }

@@ -10,4 +10,3 @@ return [
         'section' => env('NYTIMES_SECTION'),
     ],
 ];
-

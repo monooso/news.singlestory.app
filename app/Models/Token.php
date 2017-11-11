@@ -48,6 +48,16 @@ class Token extends Model
     }
 
     /**
+     * Use the password field as the string representation of the model.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->password;
+    }
+
+    /**
      * "Redeems" the current token.
      */
     public function redeem()
@@ -63,15 +73,5 @@ class Token extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Use the password field as the string representation of the model.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->password;
     }
 }

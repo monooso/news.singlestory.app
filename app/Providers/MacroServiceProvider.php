@@ -26,7 +26,7 @@ class MacroServiceProvider extends ServiceProvider
         Collection::macro('mostPopular', function (int $count = null) {
             $collection = $this->sortBy('popularity')->reverse()->values();
 
-            if (!is_null($count)) {
+            if (! is_null($count)) {
                 $collection = $collection->take($count)->values();
             }
 

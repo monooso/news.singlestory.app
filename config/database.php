@@ -19,7 +19,7 @@ return [
             'engine'      => null,
         ],
 
-        'production'  => [
+        'production' => [
             'driver'      => 'mysql',
             'host'        => env('DB_HOST'),
             'port'        => env('DB_PORT'),

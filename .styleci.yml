@@ -1,0 +1,30 @@
+preset: laravel
+
+risky: false
+
+enabled:
+    - align_double_arrow
+    - alpha_ordered_imports
+    - concat_with_spaces
+
+disabled:
+    - concat_without_spaces
+    - length_ordered_imports
+    - unary_operator_spaces
+
+finder:
+    exclude:
+        - "config"
+        - "resources/lang"
+        - "tests"
+        - "node_modules"
+        - "vendor"
+    path:
+        - "app"
+        - "database/factories"
+        - "database/migrations"
+        - "database/seeds"
+        - "helpers"
+        - "routes"
+    name:
+        - "*.php"

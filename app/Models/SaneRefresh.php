@@ -6,13 +6,14 @@ trait SaneRefresh
 {
     /**
      * Override the Model::refresh method to fix global scopes issue.
+     *
      * @see https://github.com/laravel/framework/issues/21809
      *
      * @return $this
      */
     public function refresh()
     {
-        if (!$this->exists) {
+        if (! $this->exists) {
             return $this;
         }
 
