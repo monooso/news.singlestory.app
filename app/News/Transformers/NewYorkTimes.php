@@ -2,9 +2,10 @@
 
 namespace App\News\Transformers;
 
+use App\Contracts\News\Transformer;
 use Illuminate\Support\Collection;
 
-class NewYorkTimes
+class NewYorkTimes implements Transformer
 {
     public function transform(array $data): Collection
     {

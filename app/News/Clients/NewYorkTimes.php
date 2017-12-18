@@ -2,10 +2,11 @@
 
 namespace App\News\Clients;
 
+use App\Contracts\News\Client as Contract;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 
-class NewYorkTimes
+class NewYorkTimes implements Contract
 {
     use Mockable;
 

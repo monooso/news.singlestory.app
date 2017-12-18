@@ -2,16 +2,13 @@
 
 namespace App\News\Responses;
 
+use App\Contracts\News\Response as Contract;
 use GuzzleHttp\Psr7\Response;
 
-class NewYorkTimes
+class NewYorkTimes implements Contract
 {
     /**
-     * Parses the given NYTimes API response, and extracts the results array.
-     *
-     * @param Response $response
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function parse(Response $response): array
     {
