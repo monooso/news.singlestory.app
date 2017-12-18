@@ -28,16 +28,6 @@
         {{ csrf_field() }}
 
         <section class="section has-text-centered">
-            <h1 class="title">News source</h1>
-            <label for="schedule">What is your preferred news source?</label>
-        </section>
-
-        <section class="section">
-            @component('components.email-source', ['selected' => $user->news_source, 'sources' => $sources])
-            @endcomponent
-        </section>
-
-        <section class="section has-text-centered">
             <h1 class="title">Email frequency</h1>
             <label for="schedule">
                 How frequently should we email you?
