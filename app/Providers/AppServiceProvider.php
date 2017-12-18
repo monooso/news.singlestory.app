@@ -5,10 +5,10 @@ namespace App\Providers;
 use App\Contracts\News\Client as ClientContract;
 use App\Contracts\News\Response as ResponseContract;
 use App\Contracts\News\Transformer as TransformerContract;
-use App\News\Clients\NewYorkTimes as Client;
+use App\News\Clients\NewsApi as Client;
 use App\News\News;
-use App\News\Responses\NewYorkTimes as Response;
-use App\News\Transformers\NewYorkTimes as Transformer;
+use App\News\Responses\NewsApi as Response;
+use App\News\Transformers\NewsApi as Transformer;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,8 +22,8 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(ClientContract::class, function () {
             return new Client(
-                config('news.nytimes.api_key'),
-                config('news.nytimes.section')
+                config('news.newsapi.api_key'),
+                config('news.newsapi.source')
             );
         });
 
