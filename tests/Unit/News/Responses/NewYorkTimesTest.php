@@ -11,7 +11,7 @@ class NewYorkTimesTest extends TestCase
     /** @test */
     public function it_returns_the_results_as_an_array()
     {
-        $body = $this->loadResponseData(200);
+        $body = $this->loadNewYorkTimesResponseData(200);
 
         $response = new Response(200, [], $body);
 
