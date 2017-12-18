@@ -19,10 +19,10 @@ class NewYorkTimesTest extends TestCase
 
         $handler = HandlerStack::create(new MockHandler([$expected]));
 
-        $client = new NewYorkTimes($key);
+        $client = new NewYorkTimes($key, 'any-section-will-do');
         $client->setHandler($handler);
 
-        $actual = $client->getMostPopular('anything', 100);
+        $actual = $client->getMostPopular(100);
 
         $this->assertSame($expected, $actual);
     }

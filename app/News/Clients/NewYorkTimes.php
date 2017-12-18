@@ -3,36 +3,25 @@
 namespace App\News\Clients;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 
 class NewYorkTimes
 {
-    protected $apiKey;
-    protected $handler;
+    use Mockable;
 
-    public function __construct(string $apiKey)
+    protected $apiKey;
+    protected $section;
+
+    public function __construct(string $apiKey, string $section)
     {
         $this->apiKey = $apiKey;
+        $this->section = $section;
     }
 
-    /**
-     * Ew. This method exists for the sole purpose of mocking the API calls
-     * during testing, as per the Guzzle docs.
-     *
-     * @see http://docs.guzzlephp.org/en/stable/testing.html
-     *
-     * @param HandlerStack $handler
-     */
-    public function setHandler(HandlerStack $handler)
-    {
-        $this->handler = $handler;
-    }
-
-    public function getMostPopular(string $section, int $period): Response
+    public function getMostPopular(int $period): Response
     {
         $client = $this->makeClient();
-        $url = $this->buildUrl($section, $period);
+        $url = $this->buildUrl($this->section, $period);
 
         return $client->get($url);
     }
@@ -46,8 +35,7 @@ class NewYorkTimes
                 'User-Agent' => 'news.singlestory/1.0',
                 'Accept'     => 'application/json',
             ],
-
-            'query' => ['api-key' => $this->apiKey],
+            'query'           => ['api-key' => $this->apiKey],
         ]);
     }
 
