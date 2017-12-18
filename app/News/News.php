@@ -3,13 +3,13 @@
 namespace App\News;
 
 use App\Constants\NewsWindow;
+use App\Contracts\News\Client;
+use App\Contracts\News\Response;
 use App\Contracts\News\Source;
-use App\News\Clients\NewYorkTimes as Client;
-use App\News\Responses\NewYorkTimes as Response;
-use App\News\Transformers\NewYorkTimes as Transformer;
+use App\Contracts\News\Transformer;
 use Illuminate\Support\Collection;
 
-class NewYorkTimes implements Source
+class News implements Source
 {
     /**
      * @var Client
@@ -54,8 +54,7 @@ class NewYorkTimes implements Source
      */
     protected function mostPopular(int $period): Collection
     {
-        $response = $this->client->getMostPopular(
-            config('news.nytimes.section'), $period);
+        $response = $this->client->getMostPopular($period);
 
         $results = $this->response->parse($response);
 
