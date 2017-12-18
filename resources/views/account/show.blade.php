@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('meta_title', 'Manage your email preferences')
-@section('meta_description', 'How frequently should we email you?')
+@section('meta_description', 'Manage your email preferences')
 
 @if ($errors->has('schedule'))
     @push('statuses')
@@ -28,14 +28,24 @@
         {{ csrf_field() }}
 
         <section class="section has-text-centered">
-            <h1 class="title">Email preferences</h1>
+            <h1 class="title">News source</h1>
+            <label for="schedule">What is your preferred news source?</label>
+        </section>
+
+        <section class="section">
+            @component('components.email-source', ['selected' => $user->news_source, 'sources' => $sources])
+            @endcomponent
+        </section>
+
+        <section class="section has-text-centered">
+            <h1 class="title">Email frequency</h1>
             <label for="schedule">
                 How frequently should we email you?
             </label>
         </section>
 
         <section class="section">
-            @component('components.email-preference', ['selected' => $user->schedule, 'value' => 'daily'])
+            @component('components.email-schedule', ['selected' => $user->schedule, 'value' => 'daily'])
                 @slot('title')
                     Every day
                 @endslot
@@ -45,7 +55,7 @@
                 @endslot
             @endcomponent
 
-            @component('components.email-preference', ['selected' => $user->schedule, 'value' => 'weekly'])
+            @component('components.email-schedule', ['selected' => $user->schedule, 'value' => 'weekly'])
                 @slot('title')
                     Once a week
                 @endslot
@@ -55,7 +65,7 @@
                 @endslot
             @endcomponent
 
-            @component('components.email-preference', ['selected' => $user->schedule, 'value' => 'never'])
+            @component('components.email-schedule', ['selected' => $user->schedule, 'value' => 'never'])
                 @slot('title')
                     Never
                 @endslot
@@ -66,8 +76,8 @@
             @endcomponent
         </section>
 
-        <section class="section">
-            <input class="button is-primary is-medium" type="submit" value="Save preferences"/>
+        <section class="section has-text-centered">
+            <input class="button is-primary is-large" type="submit" value="Save preferences"/>
         </section>
     </form>
 @endsection

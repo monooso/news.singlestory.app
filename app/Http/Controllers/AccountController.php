@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Constants\EmailSchedule;
+use App\Constants\NewsSource;
 use Illuminate\Validation\Rule;
 
 class AccountController extends Controller
@@ -28,16 +29,40 @@ class AccountController extends Controller
 
     public function show()
     {
-        return view('account.show', ['user' => auth()->user()]);
+        return view('account.show', [
+            'sources' => $this->sources(),
+            'user'    => auth()->user(),
+        ]);
+    }
+
+    /**
+     * Return an associative array of news sources, for use in the account
+     * preferences form.
+     *
+     * @return array
+     */
+    private function sources(): array
+    {
+        $keys = NewsSource::all();
+
+        $values = collect($keys)->map(function (string $key) {
+            return trans('sources.' . $key);
+        });
+
+        return collect($keys)->combine($values)->all();
     }
 
     public function store()
     {
         $input = request()->validate([
-            'schedule' => ['required', Rule::in(EmailSchedule::all())],
+            'news_source' => ['required', Rule::in(NewsSource::all())],
+            'schedule'    => ['required', Rule::in(EmailSchedule::all())],
         ]);
 
-        auth()->user()->update(['schedule' => $input['schedule']]);
+        auth()->user()->update([
+            'news_source' => $input['news_source'],
+            'schedule'    => $input['schedule'],
+        ]);
 
         return redirect()
             ->route('account')

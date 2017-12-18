@@ -1,0 +1,38 @@
+<?php
+
+use App\Constants\NewsSource;
+
+return [
+    NewsSource::ABC_NEWS                => 'ABC News',
+    NewsSource::NY_TIMES                => 'The New York Times',
+    NewsSource::AL_JAZEERA              => 'Al Jazeera (English)',
+    NewsSource::ASSOCIATED_PRESS        => 'Associated Press',
+    NewsSource::BBC_NEWS                => 'BBC News',
+    NewsSource::BREITBART_NEWS          => 'Breitbart News',
+    NewsSource::CBS_NEWS                => 'CBS News',
+    NewsSource::CNBC                    => 'CNBC',
+    NewsSource::CNN                     => 'CNN',
+    NewsSource::DAILY_MAIL              => 'Daily Mail',
+    NewsSource::FINANCIAL_TIMES         => 'Financial Times',
+    NewsSource::FOX_NEWS                => 'Fox News',
+    NewsSource::GOOGLE_NEWS             => 'Google News',
+    NewsSource::INDEPENDENT             => 'Independent',
+    NewsSource::METRO                   => 'Metro',
+    NewsSource::MIRROR                  => 'Mirror',
+    NewsSource::MSNBC                   => 'MSNBC',
+    NewsSource::NBC_NEWS                => 'NBC News',
+    NewsSource::NEWSWEEK                => 'Newsweek',
+    NewsSource::NEW_YORK_MAGAZINE       => 'New York Magazine',
+    NewsSource::POLITICO                => 'Politico',
+    NewsSource::REUTERS                 => 'Reuters',
+    NewsSource::THE_ECONOMIST           => 'The Economist',
+    NewsSource::THE_GUARDIAN_AU         => 'The Guardian (Australia)',
+    NewsSource::THE_GUARDIAN_UK         => 'The Guardian (UK)',
+    NewsSource::THE_HILL                => 'The Hill',
+    NewsSource::THE_HUFFINGTON_POST     => 'The Huffington Post',
+    NewsSource::THE_TELEGRAPH           => 'The Telegraph',
+    NewsSource::THE_WALL_STREET_JOURNAL => 'The Wall Street Journal',
+    NewsSource::THE_WASHINGTON_POST     => 'The Washington Post',
+    NewsSource::TIME                    => 'Time',
+    NewsSource::USA_TODAY               => 'USA Today',
+];
