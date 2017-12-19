@@ -7,24 +7,24 @@
         "id": "the-guardian-uk",
         "name": "The Guardian (UK)"
       },
-      "author": "Heather Stewart",
-      "title": "Tory rebels urge Theresa May to form cross-party alliance for soft Brexit",
-      "description": "Backbenchers who defeated government last week believe PM should reach out to Labour MPs and face down hard Brexiters",
-      "url": "https://www.theguardian.com/politics/2017/dec/17/tory-rebels-urge-theresa-may-to-form-cross-party-alliance-for-soft-brexit",
-      "urlToImage": "https://i.guim.co.uk/img/media/24387232bf63e9fea06851f610e945163d8add20/4_316_4917_2952/master/4917.jpg?w=1200&h=630&q=55&auto=format&usm=12&fit=crop&crop=faces%2Centropy&bm=normal&ba=bottom%2Cleft&blend64=aHR0cHM6Ly91cGxvYWRzLmd1aW0uY28udWsvMjAxNi8wNS8yNS9vdmVybGF5LWxvZ28tMTIwMC05MF9vcHQucG5n&s=754f04a118967a871503ae38e9cbc5c2",
-      "publishedAt": "2017-12-17T20:28:55Z"
+      "author": "First Author",
+      "title": "First Example Title",
+      "description": "First example description.",
+      "url": "https://example.com/first-article",
+      "urlToImage": "https://example.com/first-image.jpg",
+      "publishedAt": "2017-01-01T01:01:01Z"
     },
     {
       "source": {
         "id": "the-guardian-uk",
         "name": "The Guardian (UK)"
       },
-      "author": "Alexandra Topping",
-      "title": "British diplomat found dead in Beirut was murdered, police believe",
-      "description": "Body of Rebecca Dykes is reportedly found by motorway in unclear circumstances",
-      "url": "https://www.theguardian.com/uk-news/2017/dec/17/british-diplomat-found-dead-beirut-rebecca-dykes",
-      "urlToImage": "https://i.guim.co.uk/img/media/d3dfcbcb6bebdfc1106c20eb2abbc1ccb9076d68/420_105_925_555/master/925.jpg?w=1200&h=630&q=55&auto=format&usm=12&fit=crop&crop=faces%2Centropy&bm=normal&ba=bottom%2Cleft&blend64=aHR0cHM6Ly91cGxvYWRzLmd1aW0uY28udWsvMjAxNi8wNS8yNS9vdmVybGF5LWxvZ28tMTIwMC05MF9vcHQucG5n&s=ffe02e2ac68ba49d13bb6995a722f30a",
-      "publishedAt": "2017-12-17T17:33:24Z"
+      "author": "Second Author",
+      "title": "Second Example Title",
+      "description": "Second example description.",
+      "url": "https://example.com/second-article",
+      "urlToImage": "https://example.com/second-image.jpg",
+      "publishedAt": "2017-02-02T02:02:02Z"
     },
     {
       "source": {

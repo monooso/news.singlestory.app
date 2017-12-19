@@ -22,14 +22,80 @@ class NewsApiTest extends TestCase
         $this->assertInstanceOf(Collection::class, $transformed);
     }
 
+    protected function getInput(): array
+    {
+        return $this->loadNewsApiResponseJson(200)->articles;
+    }
+
     /** @test */
     public function it_transforms_each_result_into_a_normalized_array()
     {
-        $item = (new NewsApi)->transform($this->getInput())->first();
+        $transformed = (new NewsApi)->transform($this->getInput());
 
         $this->assertEquals(
-            ['abstract', 'byline', 'title', 'url'],
-            array_keys($item)
+            ['abstract', 'byline', 'external_id', 'popularity', 'title', 'url'],
+            array_keys($transformed->first())
+        );
+    }
+
+    /** @test */
+    public function it_extracts_the_abstract()
+    {
+        $transformed = (new NewsApi)->transform($this->getInput());
+
+        $this->assertEquals(
+            'First example description.',
+            $transformed[0]['abstract']
+        );
+    }
+
+    /** @test */
+    public function it_extracts_the_byline()
+    {
+        $transformed = (new NewsApi)->transform($this->getInput());
+
+        $this->assertEquals('First Author', $transformed[0]['byline']);
+    }
+
+    /** @test */
+    public function it_uses_the_url_as_the_external_id()
+    {
+        $transformed = (new NewsApi)->transform($this->getInput());
+
+        $this->assertEquals(
+            'https://example.com/first-article',
+            $transformed[0]['external_id']
+        );
+    }
+
+    /** @test */
+    public function the_most_popular_article_is_the_first_item_in_the_input_array(
+    )
+    {
+        $input = $this->getInput();
+
+        $transformed = (new NewsApi)->transform($input);
+
+        $this->assertEquals(count($input), $transformed[0]['popularity']);
+        $this->assertEquals(count($input) - 1, $transformed[1]['popularity']);
+    }
+
+    /** @test */
+    public function it_extracts_the_title()
+    {
+        $transformed = (new NewsApi)->transform($this->getInput());
+
+        $this->assertEquals('First Example Title', $transformed[0]['title']);
+    }
+
+    /** @test */
+    public function it_extracts_the_url()
+    {
+        $transformed = (new NewsApi)->transform($this->getInput());
+
+        $this->assertEquals(
+            'https://example.com/first-article',
+            $transformed[0]['url']
         );
     }
 
@@ -53,10 +119,5 @@ class NewsApiTest extends TestCase
         $transformed = (new NewsApi)->transform($input);
 
         $this->assertSame(count($input), $transformed->count());
-    }
-
-    protected function getInput(): array
-    {
-        return $this->loadNewsApiResponseJson(200)->articles;
     }
 }

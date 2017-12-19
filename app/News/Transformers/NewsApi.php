@@ -11,13 +11,21 @@ class NewsApi implements Transformer
     {
         $limit = config('news.limit');
 
-        return collect($data)->map(function ($item) {
-            return [
-                'abstract'    => $item->description,
-                'byline'      => $item->author,
-                'title'       => $item->title,
-                'url'         => $item->url,
-            ];
-        })->take($limit)->values();
+        return collect($data)
+            ->reverse()
+            ->values()
+            ->map(function ($item, $index) {
+                return [
+                    'abstract'    => $item->description,
+                    'byline'      => $item->author,
+                    'external_id' => $item->url,
+                    'popularity'  => $index + 1,
+                    'title'       => $item->title,
+                    'url'         => $item->url,
+                ];
+            })
+            ->reverse()
+            ->take($limit)
+            ->values();
     }
 }
