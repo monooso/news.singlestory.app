@@ -1,4 +1,4 @@
-<div class="email-preference">
+<div class="email-schedule">
     <input name="schedule"
            type="radio"
            id="schedule--{{ $value }}"

@@ -69,6 +69,6 @@ class NewYorkTimesTest extends TestCase
 
     protected function getInput(): array
     {
-        return $this->loadResponseJson(200)->results;
+        return $this->loadNewYorkTimesResponseJson(200)->results;
     }
 }

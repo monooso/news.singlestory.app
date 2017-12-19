@@ -5,24 +5,26 @@ namespace App\News\Clients;
 use App\Contracts\News\Client as Contract;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Carbon;
 
-class NewYorkTimes implements Contract
+class NewsApi implements Contract
 {
     use Mockable;
 
     protected $apiKey;
-    protected $section;
+    protected $source;
 
-    public function __construct(string $apiKey, string $section)
+    public function __construct(string $apiKey, string $source)
     {
         $this->apiKey = $apiKey;
-        $this->section = $section;
+        $this->source = $source;
     }
 
     public function getMostPopular(int $period): Response
     {
         $client = $this->makeClient();
-        $url = $this->buildUrl($this->section, $period);
+
+        $url = $this->buildUrl($this->source, $period);
 
         return $client->get($url);
     }
@@ -33,19 +35,19 @@ class NewYorkTimes implements Contract
             'allow_redirects' => false,
             'handler'         => $this->handler,
             'headers'         => [
-                'User-Agent' => 'news.singlestory/1.0',
                 'Accept'     => 'application/json',
+                'User-Agent' => 'news.singlestory/1.0',
+                'X-Api-Key'  => $this->apiKey,
             ],
-            'query'           => ['api-key' => $this->apiKey],
         ]);
     }
 
-    protected function buildUrl(string $section, int $period): string
+    protected function buildUrl(string $source, int $period): string
     {
-        return sprintf(
-            'https://api.nytimes.com/svc/mostpopular/v2/mostshared/%s/%d.json',
-            $section,
-            $period
-        );
+        $url = 'https://newsapi.org/v2/top-headlines?sources=%s&from=%s&to=%s&sortBy=popularity';
+        $from = Carbon::now()->subDays($period);
+        $to = Carbon::now();
+
+        return sprintf($url, $source, $from, $to);
     }
 }

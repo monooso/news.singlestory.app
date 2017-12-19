@@ -21,7 +21,8 @@ class EmailPreferencesTest extends TestCase
     }
 
     /** @test */
-    public function a_confirmation_message_is_displayed_when_the_email_preferences_are_saved()
+    public function a_confirmation_message_is_displayed_when_the_email_preferences_are_saved(
+    )
     {
         $user = factory(User::class)->create();
         $this->be($user);
@@ -101,7 +102,8 @@ class EmailPreferencesTest extends TestCase
     }
 
     /** @test */
-    public function an_error_is_returned_when_attempting_to_set_an_invalid_schedule()
+    public function an_error_is_returned_when_attempting_to_set_an_invalid_schedule(
+    )
     {
         $user = factory(User::class)->create();
         $this->be($user);
