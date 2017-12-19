@@ -14,7 +14,7 @@ class HorizonServiceProvider extends ServiceProvider
 
             $admins = config('horizon.admins', []);
 
-            return ($user && in_array($user->email, $admins));
+            return $user && in_array($user->email, $admins);
         });
     }
 }
