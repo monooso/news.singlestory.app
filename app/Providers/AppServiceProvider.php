@@ -9,15 +9,19 @@ use App\News\Clients\NewsApi as Client;
 use App\News\News;
 use App\News\Responses\NewsApi as Response;
 use App\News\Transformers\NewsApi as Transformer;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Horizon\Horizon;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
+    public function boot()
+    {
+        Blade::if ('developer', function () {
+            return Horizon::check(app()->request);
+        });
+    }
+
     public function register()
     {
         $this->app->bind(ClientContract::class, function () {
