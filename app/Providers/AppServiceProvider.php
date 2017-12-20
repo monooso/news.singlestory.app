@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Blade::if ('developer', function () {
+        Blade::if('developer', function () {
             return Horizon::check(app()->request);
         });
     }
