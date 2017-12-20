@@ -11,6 +11,9 @@
     </div>
 
     <div class="level-right nav-links">
+        @developer
+            <a href="{{ url('horizon') }}" title="Go to the Horizon dashboard">Horizon</a>
+        @enddeveloper
         @yield('nav')
     </div>
 </nav>
