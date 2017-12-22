@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Constants\NewsSource;
 use App\Exceptions\NoAvailableArticleException;
 use App\Mail\DailyStory;
 use App\Models\Article;
@@ -11,6 +12,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Mail;
 
 class SendDailyStory implements ShouldQueue
@@ -22,14 +24,25 @@ class SendDailyStory implements ShouldQueue
      */
     public function handle()
     {
-        try {
-            $article = Article::today();
-        } catch (NoAvailableArticleException $e) {
-            return;
-        }
+        $articles = $this->getArticles();
 
-        User::daily()->each(function (User $user) use ($article) {
-            Mail::to($user)->queue(new DailyStory($article));
+        User::daily()->each(function (User $user) use ($articles) {
+            $article = $articles->get($user->source);
+
+            if ($article) {
+                Mail::to($user)->queue(new DailyStory($article));
+            }
         });
+    }
+
+    protected function getArticles(): Collection
+    {
+        return collect(NewsSource::all())->mapWithKeys(function ($source) {
+            try {
+                return [$source => Article::today($source)];
+            } catch (NoAvailableArticleException $e) {
+                return [$source => null];
+            }
+        })->filter();
     }
 }

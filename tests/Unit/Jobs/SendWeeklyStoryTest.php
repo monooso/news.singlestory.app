@@ -3,6 +3,7 @@
 namespace Tests\Unit\Jobs;
 
 use App\Constants\EmailSchedule;
+use App\Constants\NewsSource;
 use App\Constants\NewsWindow;
 use App\Jobs\SendWeeklyStory;
 use App\Mail\WeeklyStory;
@@ -30,35 +31,57 @@ class SendWeeklyStoryTest extends TestCase
     }
 
     /** @test */
+    public function it_honors_the_users_chosen_news_source()
+    {
+        factory(User::class)->create([
+            'schedule' => EmailSchedule::WEEKLY,
+            'source'   => NewsSource::REUTERS,
+        ]);
+
+        factory(Article::class)->create([
+            'period'       => NewsWindow::WEEK,
+            'retrieved_at' => Carbon::now()->subDays(2),
+            'source'       => NewsSource::BREITBART_NEWS,
+        ]);
+
+        Mail::fake();
+
+        (new SendWeeklyStory())->handle();
+
+        Mail::assertNotQueued(DailyStory::class);
+    }
+
+    /** @test */
     public function it_sends_an_article_to_the_weekly_recipients()
     {
         factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'retrieved_at' => Carbon::now(),
-        ]);
-
-        factory(Article::class)->create([
-            'period'       => NewsWindow::WEEK,
-            'popularity'   => 10,
-            'retrieved_at' => Carbon::now(),
+            'source'       => NewsSource::REUTERS,
         ]);
 
         $article = factory(Article::class)->create([
             'period'       => NewsWindow::WEEK,
             'popularity'   => 20,
             'retrieved_at' => Carbon::now(),
+            'source'       => NewsSource::REUTERS,
         ]);
 
-        factory(User::class)->create(['schedule' => EmailSchedule::DAILY]);
+        factory(User::class)->create([
+            'schedule' => EmailSchedule::DAILY,
+            'source'   => NewsSource::REUTERS,
+        ]);
 
         factory(User::class)->create([
             'email'    => 'john@doe.com',
             'schedule' => EmailSchedule::WEEKLY,
+            'source'   => NewsSource::REUTERS,
         ]);
 
         factory(User::class)->create([
             'email'    => 'jane@doe.com',
             'schedule' => EmailSchedule::WEEKLY,
+            'source'   => NewsSource::REUTERS,
         ]);
 
         Mail::fake();
