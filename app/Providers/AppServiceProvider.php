@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Contracts\News\Client as ClientContract;
-use App\Contracts\News\Response as ResponseContract;
-use App\Contracts\News\Transformer as TransformerContract;
+use App\Constants\NewsSource;
 use App\News\Clients\NewsApi as Client;
 use App\News\News;
 use App\News\Responses\NewsApi as Response;
@@ -24,22 +22,18 @@ class AppServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind(ClientContract::class, function () {
-            return new Client(
-                config('news.newsapi.api_key'),
-                config('news.newsapi.source')
-            );
-        });
+        foreach (NewsSource::all() as $source) {
+            $this->registerNewsSource($source);
+        }
+    }
 
-        $this->app->bind(ResponseContract::class, Response::class);
-
-        $this->app->bind(TransformerContract::class, Transformer::class);
-
-        $this->app->singleton('news', function ($app) {
+    protected function registerNewsSource(string $source)
+    {
+        $this->app->singleton('news.' . $source, function ($app) use ($source) {
             return new News(
-                $app->make(ClientContract::class),
-                $app->make(ResponseContract::class),
-                $app->make(TransformerContract::class)
+                new Client(config('news.newsapi.api_key'), $source),
+                new Response(),
+                new Transformer()
             );
         });
     }
