@@ -1,4 +1,4 @@
-j# [Single Story](https://singlestory.news) #
+# [Single Story](https://singlestory.news) #
 
 [![MIT license](https://img.shields.io/github/license/monooso/news.singlestory.app.svg?style=flat)](https://opensource.org/licenses/MIT "MIT license")
 [![Build status](https://travis-ci.org/monooso/news.singlestory.app.svg?style=flat)](https://travis-ci.org/monooso/news.singlestory.app "Build status")
