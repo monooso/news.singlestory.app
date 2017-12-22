@@ -33,7 +33,6 @@ class Article extends Model
      * @param string $source
      *
      * @return self
-     *
      */
     public static function thisWeek(string $source): self
     {
@@ -58,7 +57,6 @@ class Article extends Model
      * @param string $source
      *
      * @return self
-     *
      */
     public static function today(string $source): self
     {
