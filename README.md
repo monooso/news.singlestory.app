@@ -1,4 +1,4 @@
-# [Single Story](https://singlestory.news) #
+j# [Single Story](https://singlestory.news) #
 
 [![MIT license](https://img.shields.io/github/license/monooso/news.singlestory.app.svg?style=flat)](https://opensource.org/licenses/MIT "MIT license")
 [![Build status](https://travis-ci.org/monooso/news.singlestory.app.svg?style=flat)](https://travis-ci.org/monooso/news.singlestory.app "Build status")
@@ -10,7 +10,7 @@ Of course, you could stop reading the news, uninstall Twitter, and get on with y
 
 This is where Single Story comes in.
 
-Every day, or every week (it's up to you), Single Story emails you the most-popular article from BBC News.
+Every day, or every week (it's up to you), Single Story emails you the most-popular article from your preferred news source.
 
 That's it, a single story.
 
