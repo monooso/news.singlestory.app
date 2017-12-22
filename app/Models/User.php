@@ -14,7 +14,7 @@ class User extends Model implements AuthenticatableContract
     use Authenticatable;
     use Notifiable;
 
-    protected $fillable = ['email', 'schedule'];
+    protected $fillable = ['email', 'schedule', 'source'];
 
     protected $hidden = [];
 

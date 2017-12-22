@@ -35,7 +35,7 @@ body {
 }
 
 .email-schedule input[type='radio']:checked + label {
-  border-color: $grey;
+  border-color: $grey-light;
 
   &:hover {
     background: none;
@@ -44,6 +44,11 @@ body {
 
 .email-schedule + .email-schedule {
   margin-top: 0.4375rem;
+}
+
+.has-flush-top {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .main {

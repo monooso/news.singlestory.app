@@ -3,13 +3,13 @@
 @section('meta_title', 'Manage your email preferences')
 @section('meta_description', 'Manage your email preferences')
 
-@if ($errors->has('schedule'))
+@foreach ($errors->all() as $error)
     @push('statuses')
         @component('components.status-error')
-            {{ $errors->first('schedule') }}
+            {{ $error }}
         @endcomponent
     @endpush
-@endif
+@endforeach
 
 @if (session()->has('status'))
     @push('statuses')
@@ -28,13 +28,21 @@
         {{ csrf_field() }}
 
         <section class="section has-text-centered">
-            <h1 class="title">Email frequency</h1>
-            <label for="schedule">
-                How frequently should we email you?
-            </label>
+            <h1 class="title">News source</h1>
+            <label for="schedule">What is your preferred news source?</label>
         </section>
 
-        <section class="section">
+        <section class="section has-flush-top">
+            @component('components.email-source', ['selected' => $user->source, 'sources' => $sources])
+            @endcomponent
+        </section>
+
+        <section class="section has-text-centered">
+            <h1 class="title">Email frequency</h1>
+            <label for="schedule">How frequently should we email you?</label>
+        </section>
+
+        <section class="section has-flush-top">
             @component('components.email-schedule', ['selected' => $user->schedule, 'value' => 'daily'])
                 @slot('title')
                     Every day

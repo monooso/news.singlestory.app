@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Constants\NewsSource;
 use App\Jobs\FetchDailyNews;
 use App\Jobs\FetchWeeklyNews;
 use App\Jobs\SendDailyStory;
@@ -25,20 +26,22 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->job(FetchWeeklyNews::class)
-            ->weekly()
-            ->saturdays()
-            ->at('01:00')
-            ->timezone('America/New_York');
+        foreach (NewsSource::all() as $source) {
+            $schedule->job(new FetchWeeklyNews($source))
+                ->weekly()
+                ->saturdays()
+                ->at('01:00')
+                ->timezone('America/New_York');
+
+            $schedule->job(new FetchDailyNews($source))
+                ->dailyAt('02:00')
+                ->timezone('America/New_York');
+        }
 
         $schedule->job(SendWeeklyStory::class)
             ->weekly()
             ->saturdays()
             ->at('04:00')
-            ->timezone('America/New_York');
-
-        $schedule->job(FetchDailyNews::class)
-            ->dailyAt('02:00')
             ->timezone('America/New_York');
 
         $schedule->job(SendDailyStory::class)

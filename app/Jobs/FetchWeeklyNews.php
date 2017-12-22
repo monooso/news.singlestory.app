@@ -14,16 +14,18 @@ class FetchWeeklyNews implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
+    protected $source;
+
+    public function __construct(string $source)
+    {
+        $this->source = $source;
+    }
+
     public function handle()
     {
-        $baseData = ['period' => NewsWindow::WEEK];
+        $baseData = ['period' => NewsWindow::WEEK, 'source' => $this->source];
 
-        news()->mostPopularThisWeek()
+        news($this->source)->mostPopularThisWeek()
             ->each(function ($articleData) use ($baseData) {
                 Article::create(array_merge($baseData, $articleData));
             });

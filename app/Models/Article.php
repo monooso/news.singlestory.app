@@ -20,6 +20,7 @@ class Article extends Model
         'external_id',
         'period',
         'popularity',
+        'source',
         'title',
         'url',
     ];
@@ -27,45 +28,49 @@ class Article extends Model
     protected $dates = ['retrieved_at'];
 
     /**
-     * Return this week's article.
+     * Return this week's article from the given source.
+     *
+     * @param string $source
      *
      * @return self
-     *
-     * @throws NoAvailableArticleException
      */
-    public static function thisWeek(): self
+    public static function thisWeek(string $source): self
     {
         try {
             $threshold = Carbon::now()->subWeek()->toDateTimeString();
 
-            return static::where('retrieved_at', '>', $threshold)
-                ->where('period', NewsWindow::WEEK)
-                ->orderBy('popularity', 'desc')
-                ->firstOrFail();
+            return static::where([
+                ['period', '=', NewsWindow::WEEK],
+                ['retrieved_at', '>', $threshold],
+                ['source', '=', $source],
+            ])->orderBy('popularity', 'desc')->firstOrFail();
         } catch (ModelNotFoundException $e) {
-            throw new NoAvailableArticleException('There is no article for this week');
+            $message = sprintf('"%s" has no article for this week', $source);
+            throw new NoAvailableArticleException($message);
         }
     }
 
     /**
-     * Return "today's" articles. In reality, we settle for any article
-     * retrieved within the past 24 hours.
+     * Return "today's" articles from the given source. In reality, we settle
+     * for any article retrieved within the past 24 hours.
+     *
+     * @param string $source
      *
      * @return self
-     *
-     * @throws NoAvailableArticleException
      */
-    public static function today(): self
+    public static function today(string $source): self
     {
         try {
             $threshold = Carbon::now()->subDay()->toDateTimeString();
 
-            return static::where('retrieved_at', '>', $threshold)
-                ->where('period', NewsWindow::DAY)
-                ->orderBy('popularity', 'desc')
-                ->firstOrFail();
+            return static::where([
+                ['period', '=', NewsWindow::DAY],
+                ['retrieved_at', '>', $threshold],
+                ['source', '=', $source],
+            ])->orderBy('popularity', 'desc')->firstOrFail();
         } catch (ModelNotFoundException $e) {
-            throw new NoAvailableArticleException('There is no article for today');
+            $message = sprintf('"%s" has no article for today', $source);
+            throw new NoAvailableArticleException($message);
         }
     }
 }

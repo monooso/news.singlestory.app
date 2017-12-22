@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Constants\EmailSchedule;
-use Illuminate\Validation\Rule;
+use App\Constants\NewsSource;
+use App\Http\Requests\StoreEmailPreferences;
 
 class AccountController extends Controller
 {
@@ -28,16 +28,22 @@ class AccountController extends Controller
 
     public function show()
     {
-        return view('account.show', ['user' => auth()->user()]);
+        return view('account.show', [
+            'sources' => $this->getAvailableSources(),
+            'user'    => auth()->user(),
+        ]);
     }
 
-    public function store()
+    protected function getAvailableSources()
     {
-        $input = request()->validate([
-            'schedule' => ['required', Rule::in(EmailSchedule::all())],
-        ]);
+        return collect(NewsSource::all())->mapWithKeys(function ($source) {
+            return [$source => trans('sources.' . $source)];
+        })->all();
+    }
 
-        auth()->user()->update(['schedule' => $input['schedule']]);
+    public function store(StoreEmailPreferences $request)
+    {
+        auth()->user()->update($request->all());
 
         return redirect()
             ->route('account')

@@ -2,11 +2,13 @@
 
 namespace Tests\Unit\Jobs;
 
+use App\Constants\NewsSource;
 use App\Constants\NewsWindow;
 use App\Jobs\FetchDailyNews;
-use App\Support\Facades\News;
+use App\News\News;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Collection;
+use Mockery;
 use Tests\TestCase;
 
 class FetchDailyNewsTest extends TestCase
@@ -16,20 +18,28 @@ class FetchDailyNewsTest extends TestCase
     /** @test */
     public function it_fetches_todays_news_and_saves_it_to_the_database()
     {
-        News::shouldReceive('mostPopularToday')
+        $mock = Mockery::mock(News::class);
+
+        $mock->shouldReceive('mostPopularToday')
             ->once()
             ->andReturn($this->getArticlesData());
 
-        (new FetchDailyNews)->handle();
+        app()->singleton('news.bbc-news', function () use ($mock) {
+            return $mock;
+        });
+
+        (new FetchDailyNews(NewsSource::BBC_NEWS))->handle();
 
         $this->assertDatabaseHas('articles', [
             'external_id' => 'abc123',
             'period'      => NewsWindow::DAY,
+            'source'      => NewsSource::BBC_NEWS,
         ]);
 
         $this->assertDatabaseHas('articles', [
             'external_id' => 'xyz987',
             'period'      => NewsWindow::DAY,
+            'source'      => NewsSource::BBC_NEWS,
         ]);
     }
 
