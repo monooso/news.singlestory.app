@@ -20,6 +20,7 @@ class Article extends Model
         'external_id',
         'period',
         'popularity',
+        'source',
         'title',
         'url',
     ];
