@@ -2,11 +2,13 @@
 
 namespace Tests\Unit\Jobs;
 
+use App\Constants\NewsSource;
 use App\Constants\NewsWindow;
 use App\Jobs\FetchWeeklyNews;
-use App\Support\Facades\News;
+use App\News\News;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Collection;
+use Mockery;
 use Tests\TestCase;
 
 class FetchWeeklyNewsTest extends TestCase
@@ -16,20 +18,28 @@ class FetchWeeklyNewsTest extends TestCase
     /** @test */
     public function it_fetches_this_weeks_news_and_saves_it_to_the_database()
     {
-        News::shouldReceive('mostPopularThisWeek')
+        $mock = Mockery::mock(News::class);
+
+        $mock->shouldReceive('mostPopularThisWeek')
             ->once()
             ->andReturn($this->getArticlesData());
 
-        (new FetchWeeklyNews)->handle();
+        app()->singleton('news.reuters', function () use ($mock) {
+            return $mock;
+        });
+
+        (new FetchWeeklyNews(NewsSource::REUTERS))->handle();
 
         $this->assertDatabaseHas('articles', [
             'external_id' => 'abc123',
             'period'      => NewsWindow::WEEK,
+            'source'      => NewsSource::REUTERS,
         ]);
 
         $this->assertDatabaseHas('articles', [
             'external_id' => 'xyz987',
             'period'      => NewsWindow::WEEK,
+            'source'      => NewsSource::REUTERS,
         ]);
     }
 
