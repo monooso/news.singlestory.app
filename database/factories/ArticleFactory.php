@@ -1,5 +1,6 @@
 <?php
 
+use App\Constants\NewsSource;
 use App\Models\Article;
 use Carbon\Carbon;
 use Faker\Generator as Faker;
@@ -12,6 +13,7 @@ $factory->define(Article::class, function (Faker $faker) {
         'period'       => $faker->randomElement([1, 7]),
         'popularity'   => (int) $faker->biasedNumberBetween(1, 100),
         'retrieved_at' => Carbon::now(),
+        'source'       => $faker->randomElement(NewsSource::all()),
         'title'        => $faker->sentence(),
         'url'          => $faker->url,
     ];

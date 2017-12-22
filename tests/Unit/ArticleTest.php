@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Constants\NewsSource;
 use App\Constants\NewsWindow;
 use App\Exceptions\NoAvailableArticleException;
 use App\Models\Article;
@@ -19,27 +20,38 @@ class ArticleTest extends TestCase
         factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'retrieved_at' => Carbon::now()->subHours(25),
+            'source'       => NewsSource::INDEPENDENT,
         ]);
 
         factory(Article::class)->create([
             'period'       => NewsWindow::WEEK,
             'popularity'   => 99,
             'retrieved_at' => Carbon::now(),
+            'source'       => NewsSource::INDEPENDENT,
         ]);
 
         factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'popularity'   => 10,
             'retrieved_at' => Carbon::now()->subHours(5),
+            'source'       => NewsSource::INDEPENDENT,
+        ]);
+
+        factory(Article::class)->create([
+            'period'       => NewsWindow::DAY,
+            'popularity'   => 99,
+            'retrieved_at' => Carbon::now()->subHours(5),
+            'source'       => NewsSource::BREITBART_NEWS,
         ]);
 
         $article = factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'popularity'   => 20,
             'retrieved_at' => Carbon::now()->subHours(6),
+            'source'       => NewsSource::INDEPENDENT,
         ]);
 
-        $result = Article::today();
+        $result = Article::today(NewsSource::INDEPENDENT);
 
         $this->assertSame($article->id, $result->id);
     }
@@ -48,7 +60,8 @@ class ArticleTest extends TestCase
     public function it_throws_an_exception_if_there_is_no_today_article()
     {
         $this->expectException(NoAvailableArticleException::class);
-        Article::today();
+
+        Article::today(NewsSource::REUTERS);
     }
 
     /** @test */
@@ -57,27 +70,38 @@ class ArticleTest extends TestCase
         factory(Article::class)->create([
             'period'       => NewsWindow::WEEK,
             'retrieved_at' => Carbon::now()->subWeek(),
+            'source'       => NewsSource::INDEPENDENT,
         ]);
 
         factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'popularity'   => 99,
             'retrieved_at' => Carbon::now()->subDays(3),
+            'source'       => NewsSource::INDEPENDENT,
         ]);
 
         factory(Article::class)->create([
             'period'       => NewsWindow::WEEK,
             'popularity'   => 10,
             'retrieved_at' => Carbon::now()->subDays(2),
+            'source'       => NewsSource::INDEPENDENT,
+        ]);
+
+        factory(Article::class)->create([
+            'period'       => NewsWindow::WEEK,
+            'popularity'   => 99,
+            'retrieved_at' => Carbon::now()->subDays(4),
+            'source'       => NewsSource::FOX_NEWS,
         ]);
 
         $article = factory(Article::class)->create([
             'period'       => NewsWindow::WEEK,
             'popularity'   => 20,
             'retrieved_at' => Carbon::now()->subDays(4),
+            'source'       => NewsSource::INDEPENDENT,
         ]);
 
-        $result = Article::thisWeek();
+        $result = Article::thisWeek(NewsSource::INDEPENDENT);
 
         $this->assertSame($article->id, $result->id);
     }
@@ -86,6 +110,7 @@ class ArticleTest extends TestCase
     public function it_throws_an_exception_if_there_is_no_this_week_article()
     {
         $this->expectException(NoAvailableArticleException::class);
-        Article::thisWeek();
+
+        Article::thisWeek(NewsSource::INDEPENDENT);
     }
 }
