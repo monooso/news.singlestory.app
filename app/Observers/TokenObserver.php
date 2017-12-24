@@ -30,7 +30,7 @@ class TokenObserver
      */
     private function deleteUserTokens($userId)
     {
-        Token::where('user_id', $userId)->delete();
+        Token::withoutGlobalScopes()->where('user_id', $userId)->delete();
     }
 
     /**
