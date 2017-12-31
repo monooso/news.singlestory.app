@@ -17,7 +17,7 @@ class NewsApi implements Transformer
             ->map(function ($item, $index) {
                 return [
                     'abstract'    => $item->description,
-                    'byline'      => $item->author,
+                    'byline'      => $item->author ?: $item->source->name,
                     'external_id' => $item->url,
                     'popularity'  => $index + 1,
                     'title'       => $item->title,

@@ -58,6 +58,17 @@ class NewsApiTest extends TestCase
     }
 
     /** @test */
+    public function it_uses_the_news_source_if_the_byline_is_empty()
+    {
+        $input = $this->getInput();
+        $input[0]->author = '';
+
+        $transformed = (new NewsApi)->transform($input);
+
+        $this->assertEquals($input[0]->source->name, $transformed[0]['byline']);
+    }
+
+    /** @test */
     public function it_uses_the_url_as_the_external_id()
     {
         $transformed = (new NewsApi)->transform($this->getInput());
