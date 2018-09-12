@@ -1,6 +1,9 @@
 @component('mail::story')
 # {{ $article->title }} #
+
+@if ($article->abstract)
 {{ $article->abstract }}
+@endif
 
 @component('mail::button', ['url' => $article->url])
 Read the full story
