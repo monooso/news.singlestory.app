@@ -7,12 +7,12 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 class EventServiceProvider extends ServiceProvider
 {
     protected $listen = [
-        'App\Events\LoginTokenRequested' => [
-            'App\Listeners\EmailLoginToken',
+        \App\Events\LoginTokenRequested::class => [
+            \App\Listeners\EmailLoginToken::class,
         ],
 
-        'App\Events\UserRegistered' => [
-            'App\Listeners\ConfirmUserRegistration',
+        \App\Events\UserRegistered::class => [
+            \App\Listeners\ConfirmUserRegistration::class,
         ],
     ];
 }
