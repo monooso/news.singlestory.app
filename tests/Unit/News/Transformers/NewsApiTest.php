@@ -80,9 +80,9 @@ class NewsApiTest extends TestCase
     }
 
     /** @test */
-    public function the_most_popular_article_is_the_first_item_in_the_input_array(
-    )
+    public function the_most_popular_article_is_the_first_item_in_the_input_array()
     {
+    
         $input = $this->getInput();
 
         $transformed = (new NewsApi)->transform($input);

@@ -19,14 +19,12 @@ trait SaneRefresh
 
         $this->setRawAttributes(static::newQueryWithoutScopes()
             ->findOrFail($this->getKey())
-            ->attributes
-        );
+            ->attributes);
 
         $this->load(collect($this->relations)
             ->except('pivot')
             ->keys()
-            ->toArray()
-        );
+            ->toArray());
 
         return $this;
     }
