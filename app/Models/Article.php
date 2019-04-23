@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Constants\NewsWindow;
 use App\Exceptions\NoAvailableArticleException;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -72,5 +73,17 @@ class Article extends Model
             $message = sprintf('"%s" has no article for today', $source);
             throw new NoAvailableArticleException($message);
         }
+    }
+
+    /**
+     * Scope to only include articles more than two weeks old
+     *
+     * @param Builder $query
+     *
+     * @return Builder
+     */
+    public function scopeOutdated(Builder $query): Builder
+    {
+        return $query->whereDate('retrieved_at', '<', now()->subWeeks(2));
     }
 }

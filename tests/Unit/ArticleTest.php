@@ -15,6 +15,22 @@ class ArticleTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function it_returns_outdated_articles()
+    {
+        factory(Article::class)->create(['retrieved_at' => Carbon::now()->subDays(14)]);
+
+        $outdated = factory(Article::class)->create([
+            'retrieved_at' => Carbon::now()->subDays(15),
+        ]);
+
+        /** @var \Illuminate\Database\Eloquent\Collection $result */
+        $result = Article::outdated()->get();
+
+        $this->assertSame(1, $result->count());
+        $this->assertSame($result->first()->id, $outdated->id);
+    }
+
+    /** @test */
     public function it_returns_todays_article()
     {
         factory(Article::class)->create([
