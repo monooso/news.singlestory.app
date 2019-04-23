@@ -22,28 +22,46 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      *
-     * @param  Schedule $schedule
+     * @param Schedule $schedule
      */
     protected function schedule(Schedule $schedule)
     {
         foreach (NewsSource::all() as $source) {
-            $schedule->job(new FetchWeeklyNews($source))
-                ->weekly()
-                ->saturdays()
-                ->at('01:00')
-                ->timezone('America/New_York');
-
-            $schedule->job(new FetchDailyNews($source))
-                ->dailyAt('02:00')
-                ->timezone('America/New_York');
+            $this->fetchWeeklyNews($schedule, $source);
+            $this->fetchDailyNews($schedule, $source);
         }
 
+        $this->sendWeeklyStory($schedule);
+        $this->sendDailyStory($schedule);
+    }
+
+    protected function fetchWeeklyNews(Schedule $schedule, string $source)
+    {
+        $schedule->job(new FetchWeeklyNews($source))
+            ->weekly()
+            ->saturdays()
+            ->at('01:00')
+            ->timezone('America/New_York');
+    }
+
+    protected function fetchDailyNews(Schedule $schedule, string $source)
+    {
+        $schedule->job(new FetchDailyNews($source))
+            ->dailyAt('02:00')
+            ->timezone('America/New_York');
+    }
+
+    protected function sendWeeklyStory(Schedule $schedule): void
+    {
         $schedule->job(SendWeeklyStory::class)
             ->weekly()
             ->saturdays()
             ->at('04:00')
             ->timezone('America/New_York');
+    }
 
+    protected function sendDailyStory(Schedule $schedule): void
+    {
         $schedule->job(SendDailyStory::class)
             ->dailyAt('05:00')
             ->timezone('America/New_York');
