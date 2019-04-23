@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Constants\NewsSource;
+use App\Jobs\DeleteOutdatedArticles;
 use App\Jobs\FetchDailyNews;
 use App\Jobs\FetchWeeklyNews;
 use App\Jobs\SendDailyStory;
@@ -12,6 +13,8 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+    protected const TIMEZONE = 'America/New_York';
+
     /**
      * The Artisan commands provided by your application.
      *
@@ -33,6 +36,8 @@ class Kernel extends ConsoleKernel
 
         $this->sendWeeklyStory($schedule);
         $this->sendDailyStory($schedule);
+
+        $this->deleteOutdatedArticles($schedule);
     }
 
     protected function fetchWeeklyNews(Schedule $schedule, string $source)
@@ -41,30 +46,31 @@ class Kernel extends ConsoleKernel
             ->weekly()
             ->saturdays()
             ->at('01:00')
-            ->timezone('America/New_York');
+            ->timezone(static::TIMEZONE);
     }
 
     protected function fetchDailyNews(Schedule $schedule, string $source)
     {
-        $schedule->job(new FetchDailyNews($source))
-            ->dailyAt('02:00')
-            ->timezone('America/New_York');
+        $schedule->job(new FetchDailyNews($source))->dailyAt('02:00')->timezone(static::TIMEZONE);
     }
 
-    protected function sendWeeklyStory(Schedule $schedule): void
+    protected function sendWeeklyStory(Schedule $schedule)
     {
         $schedule->job(SendWeeklyStory::class)
             ->weekly()
             ->saturdays()
             ->at('04:00')
-            ->timezone('America/New_York');
+            ->timezone(static::TIMEZONE);
     }
 
-    protected function sendDailyStory(Schedule $schedule): void
+    protected function sendDailyStory(Schedule $schedule)
     {
-        $schedule->job(SendDailyStory::class)
-            ->dailyAt('05:00')
-            ->timezone('America/New_York');
+        $schedule->job(SendDailyStory::class)->dailyAt('05:00')->timezone(static::TIMEZONE);
+    }
+
+    protected function deleteOutdatedArticles(Schedule $schedule)
+    {
+        $schedule->job(DeleteOutdatedArticles::class)->dailyAt('10:00')->timezone(static::TIMEZONE);
     }
 
     /**
