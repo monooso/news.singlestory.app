@@ -76,7 +76,7 @@ class Article extends Model
     }
 
     /**
-     * Scope to only include articles more than two weeks old
+     * Scope to only include articles more than two weeks old.
      *
      * @param Builder $query
      *
