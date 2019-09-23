@@ -86,13 +86,13 @@ class EmailPreferencesTest extends TestCase
 
         $response = $this->post(route('account'), [
             'schedule' => EmailSchedule::NEVER,
-            'source'   => NewsSource::BREITBART_NEWS,
+            'source'   => NewsSource::THE_TELEGRAPH,
         ]);
 
         $this->assertDatabaseHas('users', [
             'id'       => $user->id,
             'schedule' => EmailSchedule::NEVER,
-            'source'   => NewsSource::BREITBART_NEWS,
+            'source'   => NewsSource::THE_TELEGRAPH,
         ]);
 
         $response->assertRedirect(route('account'));

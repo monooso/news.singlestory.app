@@ -57,7 +57,7 @@ class ArticleTest extends TestCase
             'period'       => NewsWindow::DAY,
             'popularity'   => 99,
             'retrieved_at' => Carbon::now()->subHours(5),
-            'source'       => NewsSource::BREITBART_NEWS,
+            'source'       => NewsSource::BBC_NEWS,
         ]);
 
         $article = factory(Article::class)->create([
@@ -77,7 +77,7 @@ class ArticleTest extends TestCase
     {
         $this->expectException(NoAvailableArticleException::class);
 
-        Article::today(NewsSource::REUTERS);
+        Article::today(NewsSource::ASSOCIATED_PRESS);
     }
 
     /** @test */
@@ -107,7 +107,7 @@ class ArticleTest extends TestCase
             'period'       => NewsWindow::WEEK,
             'popularity'   => 99,
             'retrieved_at' => Carbon::now()->subDays(4),
-            'source'       => NewsSource::FOX_NEWS,
+            'source'       => NewsSource::GOOGLE_NEWS,
         ]);
 
         $article = factory(Article::class)->create([

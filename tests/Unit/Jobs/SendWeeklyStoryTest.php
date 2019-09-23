@@ -6,6 +6,7 @@ use App\Constants\EmailSchedule;
 use App\Constants\NewsSource;
 use App\Constants\NewsWindow;
 use App\Jobs\SendWeeklyStory;
+use App\Mail\DailyStory;
 use App\Mail\WeeklyStory;
 use App\Models\Article;
 use App\Models\User;
@@ -35,13 +36,13 @@ class SendWeeklyStoryTest extends TestCase
     {
         factory(User::class)->create([
             'schedule' => EmailSchedule::WEEKLY,
-            'source'   => NewsSource::REUTERS,
+            'source'   => NewsSource::BBC_NEWS,
         ]);
 
         factory(Article::class)->create([
             'period'       => NewsWindow::WEEK,
             'retrieved_at' => Carbon::now()->subDays(2),
-            'source'       => NewsSource::BREITBART_NEWS,
+            'source'       => NewsSource::THE_WASHINGTON_POST,
         ]);
 
         Mail::fake();
@@ -57,31 +58,31 @@ class SendWeeklyStoryTest extends TestCase
         factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'retrieved_at' => Carbon::now(),
-            'source'       => NewsSource::REUTERS,
+            'source'       => NewsSource::ASSOCIATED_PRESS,
         ]);
 
         $article = factory(Article::class)->create([
             'period'       => NewsWindow::WEEK,
             'popularity'   => 20,
             'retrieved_at' => Carbon::now(),
-            'source'       => NewsSource::REUTERS,
+            'source'       => NewsSource::ASSOCIATED_PRESS,
         ]);
 
         factory(User::class)->create([
             'schedule' => EmailSchedule::DAILY,
-            'source'   => NewsSource::REUTERS,
+            'source'   => NewsSource::ASSOCIATED_PRESS,
         ]);
 
         factory(User::class)->create([
             'email'    => 'john@doe.com',
             'schedule' => EmailSchedule::WEEKLY,
-            'source'   => NewsSource::REUTERS,
+            'source'   => NewsSource::ASSOCIATED_PRESS,
         ]);
 
         factory(User::class)->create([
             'email'    => 'jane@doe.com',
             'schedule' => EmailSchedule::WEEKLY,
-            'source'   => NewsSource::REUTERS,
+            'source'   => NewsSource::ASSOCIATED_PRESS,
         ]);
 
         Mail::fake();

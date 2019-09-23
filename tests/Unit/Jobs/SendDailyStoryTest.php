@@ -41,7 +41,7 @@ class SendDailyStoryTest extends TestCase
         factory(Article::class)->create([
             'period'       => NewsWindow::DAY,
             'retrieved_at' => Carbon::now(),
-            'source'       => NewsSource::BREITBART_NEWS,
+            'source'       => NewsSource::THE_TELEGRAPH,
         ]);
 
         Mail::fake();
