@@ -30,7 +30,7 @@ class NewsApi implements Transformer
     }
 
     /**
-     * Normalise the description
+     * Normalise the description.
      *
      * Remove extraneous whitespace, and normalise line-feeds.
      *
@@ -40,7 +40,7 @@ class NewsApi implements Transformer
      */
     private function normalizeDescription($description): string
     {
-        if (!is_string($description)) {
+        if (! is_string($description)) {
             return '';
         }
 
