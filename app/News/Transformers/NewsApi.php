@@ -16,7 +16,7 @@ class NewsApi implements Transformer
             ->values()
             ->map(function ($item, $index) {
                 return [
-                    'abstract'    => $item->description,
+                    'abstract'    => $this->normalizeDescription($item->description),
                     'byline'      => $item->author ?: $item->source->name,
                     'external_id' => $item->url,
                     'popularity'  => $index + 1,
@@ -27,5 +27,23 @@ class NewsApi implements Transformer
             ->reverse()
             ->take($limit)
             ->values();
+    }
+
+    /**
+     * Normalise the description.
+     *
+     * Remove extraneous whitespace, and normalise line-feeds.
+     *
+     * @param $description
+     *
+     * @return string
+     */
+    private function normalizeDescription($description): string
+    {
+        if (! is_string($description)) {
+            return '';
+        }
+
+        return preg_replace(['/[ \f\t]+/', '/\R/'], [' ', "\n"], $description);
     }
 }

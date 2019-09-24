@@ -39,12 +39,12 @@ class NewsApiTest extends TestCase
     }
 
     /** @test */
-    public function it_extracts_the_abstract()
+    public function it_extracts_and_normalizes_the_abstract()
     {
         $transformed = (new NewsApi)->transform($this->getInput());
 
         $this->assertEquals(
-            'First example description.',
+            "First example description. With whitespace.\nAnd line breaks \n to boot.",
             $transformed[0]['abstract']
         );
     }
@@ -82,7 +82,7 @@ class NewsApiTest extends TestCase
     /** @test */
     public function the_most_popular_article_is_the_first_item_in_the_input_array()
     {
-    
+
         $input = $this->getInput();
 
         $transformed = (new NewsApi)->transform($input);
