@@ -9,7 +9,7 @@
       },
       "author": "First Author",
       "title": "First Example Title",
-      "description": "First example description.",
+      "description": "First example description.    With   \t\twhitespace.\nAnd line breaks   \r\n   to boot.",
       "url": "https://example.com/first-article",
       "urlToImage": "https://example.com/first-image.jpg",
       "publishedAt": "2017-01-01T01:01:01Z"
