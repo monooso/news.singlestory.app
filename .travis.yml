@@ -1,11 +1,11 @@
 language: php
 
-php:
-    - 7.1.3
-    - 7.2
-    - 7.3
+os: linux
 
-sudo: false
+dist: xenial
+
+php:
+    - 7.3
 
 before_script:
     - cp .env.travis .env
