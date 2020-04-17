@@ -7,11 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class MacroServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
         $this->bootMostPopularCollectionMacro();
@@ -32,14 +27,5 @@ class MacroServiceProvider extends ServiceProvider
 
             return $collection;
         });
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
     }
 }
