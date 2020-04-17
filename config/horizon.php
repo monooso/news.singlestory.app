@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'admins' => ['stephen@experiencehq.net'],
+    'admins' => [env('HORIZON_ADMIN_EMAIL')],
 
     /*
     |--------------------------------------------------------------------------
