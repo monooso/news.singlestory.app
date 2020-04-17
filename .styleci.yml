@@ -9,7 +9,6 @@ enabled:
 
 disabled:
     - concat_without_spaces
-    - length_ordered_imports
     - unary_operator_spaces
 
 finder:
