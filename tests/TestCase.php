@@ -27,7 +27,7 @@ abstract class TestCase extends BaseTestCase
             $seconds
         );
 
-        $this->assertEquals($expected, $actual, $message, $seconds);
+        $this->assertEqualsWithDelta($expected, $actual, $seconds, $message);
     }
 
     /**

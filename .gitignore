@@ -1,14 +1,23 @@
+# System files
 .DS_Store
 
-/node_modules
+# Environment-specific files
+.env
+.env.testing
+
+# Editor configs
+/.idea
+
+# Laravel runtime files
 /public/hot
 /public/storage
 /storage/*.key
+
+# Third-party packages
+/node_modules
 /vendor
-/.idea
-/.vagrant
-Homestead.json
-Homestead.yaml
+
+# Logs and caches
 npm-debug.log
 yarn-error.log
-.env
+.phpunit.result.cache

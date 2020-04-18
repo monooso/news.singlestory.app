@@ -3,7 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Token;
-use Carbon\Carbon;
+use Illuminate\Support\Carbon;
 use Ramsey\Uuid\Uuid;
 
 class TokenObserver
@@ -16,10 +16,7 @@ class TokenObserver
     public function creating(Token $instance)
     {
         $this->deleteUserTokens($instance->user_id);
-
-        $instance->expires_at = Carbon::now()
-            ->addMinutes(config('token.lifetime'));
-
+        $instance->expires_at = Carbon::now()->addMinutes(config('token.lifetime'));
         $instance->password = Uuid::uuid4()->toString();
     }
 

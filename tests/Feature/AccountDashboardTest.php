@@ -19,7 +19,7 @@ class AccountDashboardTest extends TestCase
         $response->assertRedirect(route('login'));
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         Mail::fake();

@@ -44,7 +44,7 @@ class TokenScopeTest extends TestCase
         $this->assertEquals(2, $result->count());
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         Token::flushEventListeners();

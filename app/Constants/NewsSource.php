@@ -2,6 +2,8 @@
 
 namespace App\Constants;
 
+use Illuminate\Support\Arr;
+
 abstract class NewsSource
 {
     const ASSOCIATED_PRESS = 'associated-press';
@@ -25,7 +27,7 @@ abstract class NewsSource
      */
     public static function all(): array
     {
-        return array_sort([
+        return Arr::sort([
             static::NY_TIMES,
             static::ASSOCIATED_PRESS,
             static::BBC_NEWS,

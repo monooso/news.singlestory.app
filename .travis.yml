@@ -1,11 +1,15 @@
+os: linux
+dist: xenial
 language: php
 
-os: linux
-
-dist: xenial
-
 php:
-    - 7.3
+    - 7.4
+
+services:
+    - mysql
+
+before_install:
+    - mysql -e 'CREATE DATABASE singlestory_test;'
 
 before_script:
     - cp .env.travis .env

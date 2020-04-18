@@ -46,7 +46,7 @@ class HorizonTest extends TestCase
         $response->assertStatus(200);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         Mail::fake();
