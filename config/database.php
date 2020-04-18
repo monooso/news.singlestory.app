@@ -18,16 +18,10 @@ return [
             'strict'      => true,
             'engine'      => null,
         ],
-
-        'testing' => [
-            'driver'   => 'sqlite',
-            'database' => ':memory:',
-            'prefix'   => '',
-        ],
     ],
 
     'redis' => [
-        'client'  => 'predis',
+        'client'  => 'phpredis',
         'default' => [
             'host'     => env('REDIS_HOST'),
             'password' => env('REDIS_PASSWORD'),

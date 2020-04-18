@@ -37,7 +37,7 @@ class StoreEmailPreferences extends FormRequest
      *
      * @return array
      */
-    protected function validationData()
+    public function validationData()
     {
         return $this->request->all();
     }
