@@ -2,8 +2,8 @@
 
 namespace App\Exceptions;
 
-use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -25,11 +25,11 @@ class Handler extends ExceptionHandler
      * Report or log an exception. This is a great spot to send exceptions to
      * Sentry, Bugsnag, etc.
      *
-     * @param Exception $exception
+     * @param Throwable $exception
      *
-     * @throws Exception
+     * @throws Throwable
      */
-    public function report(Exception $exception)
+    public function report(Throwable $exception)
     {
         if ($this->shouldReportToSentry($exception)) {
             app('sentry')->captureException($exception);
@@ -42,11 +42,11 @@ class Handler extends ExceptionHandler
      * Returns a boolean indicating whether we should report the given error to
      * Sentry.
      *
-     * @param Exception $exception
+     * @param Throwable $exception
      *
      * @return bool
      */
-    protected function shouldReportToSentry(Exception $exception): bool
+    protected function shouldReportToSentry(Throwable $exception): bool
     {
         return app()->environment('production')
             && app()->bound('sentry')
@@ -56,12 +56,12 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Exception                $exception
+     * @param \Illuminate\Http\Request $request
+     * @param Throwable                $exception
      *
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $exception)
+    public function render($request, Throwable $exception)
     {
         if ($exception instanceof InvalidTokenException) {
             return response()->view('errors.invalid-token', [
